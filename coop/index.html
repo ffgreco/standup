@@ -1417,13 +1417,38 @@
         class="border-t border-white border-opacity-10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
         <p class="font-body text-xs text-gray-500">&copy; 2024 Coop81 – Società Cooperativa Sociale. Tutti i diritti
           riservati.</p>
-          <p class="font-body text-xs text-gray-600">Made with 💙 by <u><a href="https://standupagency.it">StandUp Agency</a></u></p>
+        <p class="font-body text-xs text-gray-600">Made with 💙 by <u><a href="https://standupagency.it">StandUp
+              Agency</a></u></p>
         <p class="font-body text-xs text-gray-600">Tipo A e B ai sensi della L. 381/91 | Sede a Mazzano (BS)</p>
       </div>
     </div>
   </footer>
 
-
+  <div id="cookie-banner"
+    class="fixed bottom-0 left-0 w-full md:bottom-6 md:left-6 md:w-[420px] bg-white rounded-t-2xl md:rounded-2xl shadow-[0_-4px_25px_rgba(0,0,0,0.08)] md:shadow-2xl z-[9999] transform transition-transform duration-500 translate-y-full opacity-0 border border-gray-100 font-sans"
+    aria-hidden="true">
+    <div class="p-6 md:p-7">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="text-2xl" aria-hidden="true">🍪</span>
+        <h3 class="text-lg font-bold text-gray-900 tracking-tight">La tua privacy</h3>
+      </div>
+      <p class="text-sm text-gray-600 leading-relaxed mb-6">
+        Utilizziamo cookie tecnici essenziali e, con il tuo consenso, cookie analitici (Google Analytics) per capire
+        come interagisci con il nostro sito e migliorare i nostri servizi.
+        <a href="privacy.html" class="text-blue-600 font-medium hover:underline">Scopri di più</a>.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <button id="accept-cookies"
+          class="w-full sm:w-auto flex-1 px-5 py-3 bg-brand-blue text-white text-sm font-semibold rounded-xl hover:bg-blue-700 transition-colors shadow-sm">
+          Accetta tutti
+        </button>
+        <button id="reject-cookies"
+          class="w-full sm:w-auto flex-1 px-5 py-3 bg-gray-100 text-gray-700 text-sm font-semibold rounded-xl hover:bg-gray-200 transition-colors">
+          Solo essenziali
+        </button>
+      </div>
+    </div>
+  </div>
   <script>
     // ── Topbar scroll effect ───────────────────────────────────
     const topbar = document.getElementById('topbar');
@@ -1504,6 +1529,90 @@
         btn.style.background = '#2d9c47';
       });
     }
+
+
+    // --- 1. CONFIGURAZIONE GOOGLE ANALYTICS ---
+    // Inserisci qui l'ID del cliente (es. G-XXXXXXXXXX)
+    const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+    const rejectBtn = document.getElementById('reject-cookies');
+
+    // --- 2. FUNZIONE PER INIETTARE GA SOLO SE AUTORIZZATO ---
+    function loadGoogleAnalytics() {
+      // Evita di caricare lo script due volte se si clicca più volte
+      if (document.getElementById('ga-script-async')) return;
+
+      // Crea e inietta lo script esterno di Google
+      const script1 = document.createElement('script');
+      script1.id = 'ga-script-async';
+      script1.async = true;
+      script1.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+      document.head.appendChild(script1);
+
+      // Crea e inietta lo script di configurazione inline
+      const script2 = document.createElement('script');
+      script2.innerHTML = `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '${GA_MEASUREMENT_ID}');
+  `;
+      document.head.appendChild(script2);
+
+      console.log('✅ Cookie analitici accettati: Google Analytics avviato.');
+    }
+
+    // --- 3. ANIMAZIONI DEL BANNER ---
+    function hideBanner() {
+      cookieBanner.classList.remove('translate-y-0', 'opacity-100');
+      cookieBanner.classList.add('translate-y-full', 'opacity-0');
+      cookieBanner.setAttribute('aria-hidden', 'true');
+
+      // Rimuove il banner dal DOM dopo l'animazione per non dare fastidio al mouse
+      setTimeout(() => {
+        cookieBanner.style.display = 'none';
+      }, 500);
+    }
+
+    function showBanner() {
+      cookieBanner.style.display = 'block';
+      cookieBanner.setAttribute('aria-hidden', 'false');
+      // Un piccolo delay (800ms) fa entrare il banner in scena in modo molto "premium"
+      setTimeout(() => {
+        cookieBanner.classList.remove('translate-y-full', 'opacity-0');
+        cookieBanner.classList.add('translate-y-0', 'opacity-100');
+      }, 800);
+    }
+
+    // --- 4. LOGICA DI CONTROLLO E MEMORIZZAZIONE ---
+    document.addEventListener('DOMContentLoaded', () => {
+      // Legge la scelta salvata nel browser dell'utente
+      const consent = localStorage.getItem('agency_cookie_consent');
+
+      if (consent === 'accepted') {
+        // Se aveva già accettato in passato, avvia Google Analytics subito
+        loadGoogleAnalytics();
+      } else if (!consent) {
+        // Se non ha mai fatto una scelta, mostra il banner
+        showBanner();
+      }
+
+      // Click su "Accetta tutti"
+      acceptBtn.addEventListener('click', () => {
+        localStorage.setItem('agency_cookie_consent', 'accepted');
+        loadGoogleAnalytics();
+        hideBanner();
+      });
+
+      // Click su "Solo essenziali"
+      rejectBtn.addEventListener('click', () => {
+        localStorage.setItem('agency_cookie_consent', 'rejected');
+        hideBanner();
+        console.log('❌ Cookie analitici rifiutati.');
+      });
+    });
   </script>
 
 </body>
