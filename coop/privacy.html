@@ -11,7 +11,7 @@
     <meta name="keywords" content="Coop81, privacy policy, GDPR, cooperativa sociale Brescia" />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Coop81" />
-    <link rel="shortcut icon" href="coop81_logo.avif" type="image/x-icon">
+    <link rel="shortcut icon" href="coop81_logo_new.png" type="image/png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,12 +24,12 @@
                 extend: {
                     colors: {
                         brand: {
-                            blue: '#1058AC',
-                            dark: '#0a3d7d',
-                            light: '#3a7fd4',
-                            ink: '#2a2523',
-                            warm: '#f5f1ec',
-                            accent: '#e8f0fc',
+                            blue: '#005093',
+                            dark: '#003b6d',
+                            light: '#447BB1',
+                            ink: '#23313f',
+                            warm: '#f7fafc',
+                            accent: '#DBE6EF',
                         }
                     },
                     fontFamily: {
@@ -59,10 +59,10 @@
             border: none;
             transition: background 0.2s ease;
         }
-        .hamburger-btn:hover { background: rgba(16, 88, 172, 0.08); }
+        .hamburger-btn:hover { background: rgba(0, 80, 147, 0.08); }
         .hamburger-lines { display: flex; flex-direction: column; gap: 5px; }
         .hamburger-lines span {
-            display: block; width: 22px; height: 2px; background: #2a2523; border-radius: 2px;
+            display: block; width: 22px; height: 2px; background: #23313f; border-radius: 2px;
             transition: transform 0.35s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.25s ease, width 0.3s ease;
             transform-origin: center;
         }
@@ -87,13 +87,13 @@
 
         #sidebar::before {
             content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
-            background: linear-gradient(to bottom, #1058AC, #3a7fd4, #e8f0fc); border-radius: 0 2px 2px 0; z-index: 10;
+            background: linear-gradient(to bottom, #005093, #447BB1, #DBE6EF); border-radius: 0 2px 2px 0; z-index: 10;
         }
 
         /* ── NAV LINKS ── */
         .sidebar-link {
             display: flex; align-items: center; gap: 14px; padding: 12px 16px; border-radius: 12px;
-            font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #2a2523; text-decoration: none;
+            font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: #23313f; text-decoration: none;
             position: relative; transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
             opacity: 0; transform: translateX(12px); width: 100%; box-sizing: border-box;
         }
@@ -105,14 +105,14 @@
         body.sidebar-open .sidebar-link:nth-child(5) { transition-delay: 0.25s; }
         body.sidebar-open .sidebar-link:nth-child(6) { transition-delay: 0.30s; }
 
-        .sidebar-link:hover { background: #e8f0fc; color: #1058AC; }
+        .sidebar-link:hover { background: #DBE6EF; color: #005093; }
         .sidebar-link .link-icon {
-            width: 36px; height: 36px; border-radius: 10px; background: #f5f1ec;
+            width: 36px; height: 36px; border-radius: 10px; background: #DBE6EF;
             display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s ease;
         }
-        .sidebar-link:hover .link-icon { background: #1058AC; }
+        .sidebar-link:hover .link-icon { background: #005093; }
         .sidebar-link:hover .link-icon svg { color: #fff; }
-        .sidebar-link .link-icon svg { transition: color 0.2s ease; color: #1058AC; }
+        .sidebar-link .link-icon svg { transition: color 0.2s ease; color: #005093; }
 
         .sidebar-cta { opacity: 0; transform: translateY(12px); transition: opacity 0.4s ease, transform 0.4s ease; }
         body.sidebar-open .sidebar-cta { opacity: 1; transform: translateY(0); transition-delay: 0.35s; }
@@ -126,11 +126,11 @@
         body.sidebar-open .sidebar-footer-item { opacity: 1; transition-delay: 0.40s; }
 
         .btn-primary { transition: all 0.25s ease; position: relative; overflow: hidden; }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 35px rgba(16, 88, 172, 0.35); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 35px rgba(0, 80, 147, 0.35); }
         body.sidebar-open { overflow: hidden; }
 
         /* Stili aggiuntivi per la formattazione del testo */
-        .prose h2 { color: #0a3d7d; font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; }
+        .prose h2 { color: #003b6d; font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; }
         .prose p { margin-bottom: 1rem; }
         .prose ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
         .prose li { margin-bottom: 0.5rem; }
@@ -139,154 +139,162 @@
 
 <body class="bg-brand-warm text-brand-ink">
 
-    <header id="topbar" class="fixed top-0 left-0 right-0 z-50 py-4 bg-white shadow-sm border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-    
-          <a href="index.html" aria-label="Coop81 – Vai alla homepage">
-            <img src="./coop81_logo.avif" alt="Logo Coop81 – Società Cooperativa Sociale" width="130" height="52"
-              class="h-12 w-auto" />
+  <header id="topbar" class="fixed top-0 left-0 right-0 z-50 py-4 bg-white shadow-sm border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+
+      <a href="./index.html" aria-label="Coop81 – Vai alla homepage">
+        <img src="./coop81_logo_new.png" alt="Logo Coop81 – Società Cooperativa Sociale" width="190" height="72"
+          class="h-12 w-auto" />
+      </a>
+
+      <nav class="hidden md:flex items-center gap-1" aria-label="Navigazione principale">
+        <a href="./index.html#chi-siamo" class="font-body text-sm font-medium text-brand-ink px-4 py-2 rounded-full hover:bg-brand-accent hover:text-brand-blue transition-colors duration-200">Chi siamo</a>
+        <a href="./index.html#servizi" class="font-body text-sm font-medium text-brand-ink px-4 py-2 rounded-full hover:bg-brand-accent hover:text-brand-blue transition-colors duration-200">Servizi</a>
+        <a href="./index.html#impatto" class="font-body text-sm font-medium text-brand-ink px-4 py-2 rounded-full hover:bg-brand-accent hover:text-brand-blue transition-colors duration-200">Impatto</a>
+        <a href="./index.html#perche" class="font-body text-sm font-medium text-brand-ink px-4 py-2 rounded-full hover:bg-brand-accent hover:text-brand-blue transition-colors duration-200">Perché sceglierci</a>
+        <a href="./index.html#testimonianze" class="font-body text-sm font-medium text-brand-ink px-4 py-2 rounded-full hover:bg-brand-accent hover:text-brand-blue transition-colors duration-200">Testimonianze</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="./index.html#contatti"
+          class="hidden md:inline-flex btn-primary bg-brand-blue text-white px-5 py-2.5 rounded-full text-sm font-medium font-body">
+          Richiedi Preventivo
+        </a>
+
+        <button id="sidebar-toggle" class="hamburger-btn md:hidden" aria-expanded="false" aria-controls="sidebar"
+          aria-label="Apri menu di navigazione">
+          <div class="hamburger-lines">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <div id="sidebar-overlay" aria-hidden="true"></div>
+
+  <aside id="sidebar" role="navigation" aria-label="Menu principale" aria-hidden="true">
+    <div class="flex-none w-full flex items-center justify-between px-6 pt-6 pb-5 border-b border-gray-100 box-border">
+      <div class="sidebar-header-item flex-shrink-0">
+        <img src="./coop81_logo_new.png" alt="Logo Coop81" width="170" height="64" class="h-10 w-auto" />
+      </div>
+      <div class="sidebar-header-item flex items-center gap-3 flex-shrink-0">
+        <span class="inline-block bg-brand-accent text-brand-blue text-xs font-body font-medium px-3 py-1 rounded-full">
+          Dal 1981
+        </span>
+        <button onclick="closeSidebar()" aria-label="Chiudi menu"
+          class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-50 text-gray-400 hover:bg-brand-accent hover:text-brand-blue transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <nav class="flex-1 w-full overflow-y-auto overflow-x-hidden px-4 py-6 box-border" aria-label="Sezioni del sito">
+      <p class="px-2 mb-3 text-xs font-body font-semibold text-gray-400 uppercase tracking-widest hidden sm:block">
+        Navigazione</p>
+
+      <div class="flex flex-col gap-1 w-full">
+        <a href="#chi-siamo" class="sidebar-link">
+          <span class="link-icon">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </span>
+          Chi siamo
+        </a>
+
+        <a href="#servizi" class="sidebar-link">
+          <span class="link-icon">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </span>
+          Servizi
+        </a>
+
+        <a href="#impatto" class="sidebar-link">
+          <span class="link-icon">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+          </span>
+          Impatto
+        </a>
+
+        <a href="#perche" class="sidebar-link">
+          <span class="link-icon">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
+          </span>
+          Perché sceglierci
+        </a>
+
+        <a href="#testimonianze" class="sidebar-link">
+          <span class="link-icon">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+          </span>
+          Testimonianze
+        </a>
+
+        <a href="#contatti" class="sidebar-link">
+          <span class="link-icon">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </span>
+          Contatti
+        </a>
+      </div>
+    </nav>
+
+    <div class="flex-none w-full box-border pb-2">
+      <div class="px-4 pb-4">
+        <div
+          class="sidebar-cta bg-gradient-to-br from-brand-blue to-brand-dark rounded-2xl p-5 text-white relative overflow-hidden shadow-lg">
+          <div class="absolute top-0 right-0 w-20 h-20 rounded-full bg-white opacity-5 translate-x-1/3 -translate-y-1/3"
+            aria-hidden="true"></div>
+          <p class="font-display font-semibold text-base mb-1 relative z-10">Richiedi un preventivo</p>
+          <p class="font-body text-xs text-brand-accent mb-4 relative z-10">Risposta entro 24h lavorative</p>
+          <a href="#contatti"
+            class="relative z-10 inline-block w-full text-center bg-white text-brand-blue font-body font-medium text-sm py-2.5 rounded-xl hover:bg-gray-50 transition-colors duration-200">
+            Contattaci →
           </a>
-    
-          <div class="flex items-center gap-3">
-            <a href="index.html#contatti"
-              class="hidden md:inline-flex btn-primary bg-brand-blue text-white px-5 py-2.5 rounded-full text-sm font-medium font-body">
-              Richiedi Preventivo
-            </a>
-    
-            <button id="sidebar-toggle" class="hamburger-btn" aria-expanded="false" aria-controls="sidebar"
-              aria-label="Apri menu di navigazione">
-              <div class="hamburger-lines">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </button>
-          </div>
-    
         </div>
-      </header>
-    
-      <div id="sidebar-overlay" aria-hidden="true"></div>
-    
-      <aside id="sidebar" role="navigation" aria-label="Menu principale" aria-hidden="true">
-        <div class="flex-none w-full flex items-center justify-between px-6 pt-6 pb-5 border-b border-gray-100 box-border">
-          <div class="sidebar-header-item flex-shrink-0">
-            <img src="./coop81_logo.avif" alt="Logo Coop81" width="110" height="44" class="h-10 w-auto" />
-          </div>
-          <div class="sidebar-header-item flex items-center gap-3 flex-shrink-0">
-            <span class="inline-block bg-brand-accent text-brand-blue text-xs font-body font-medium px-3 py-1 rounded-full">
-              Dal 1981
-            </span>
-            <button onclick="closeSidebar()" aria-label="Chiudi menu"
-              class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-50 text-gray-400 hover:bg-brand-accent hover:text-brand-blue transition-colors">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
+      </div>
+
+      <div class="sidebar-footer-item border-t border-gray-100 px-6 py-4 flex flex-col gap-1">
+        <div class="flex items-center gap-2">
+          <svg class="w-3.5 h-3.5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+          <a href="tel:0302593954"
+            class="font-body text-xs text-gray-500 hover:text-brand-blue transition-colors">030-2593954</a>
         </div>
-    
-        <nav class="flex-1 w-full overflow-y-auto overflow-x-hidden px-4 py-6 box-border" aria-label="Sezioni del sito">
-          <p class="px-2 mb-3 text-xs font-body font-semibold text-gray-400 uppercase tracking-widest hidden sm:block">
-            Navigazione</p>
-    
-          <div class="flex flex-col gap-1 w-full">
-            <a href="index.html#chi-siamo" class="sidebar-link">
-              <span class="link-icon">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-              </span>
-              Chi siamo
-            </a>
-    
-            <a href="index.html#servizi" class="sidebar-link">
-              <span class="link-icon">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
-              </span>
-              Servizi
-            </a>
-    
-            <a href="index.html#impatto" class="sidebar-link">
-              <span class="link-icon">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
-              </span>
-              Impatto
-            </a>
-    
-            <a href="index.html#perche" class="sidebar-link">
-              <span class="link-icon">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                </svg>
-              </span>
-              Perché sceglierci
-            </a>
-    
-            <a href="index.html#testimonianze" class="sidebar-link">
-              <span class="link-icon">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                </svg>
-              </span>
-              Testimonianze
-            </a>
-    
-            <a href="index.html#contatti" class="sidebar-link">
-              <span class="link-icon">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </span>
-              Contatti
-            </a>
-          </div>
-        </nav>
-    
-        <div class="flex-none w-full box-border pb-2">
-          <div class="px-4 pb-4">
-            <div
-              class="sidebar-cta bg-gradient-to-br from-brand-blue to-brand-dark rounded-2xl p-5 text-white relative overflow-hidden shadow-lg">
-              <div class="absolute top-0 right-0 w-20 h-20 rounded-full bg-white opacity-5 translate-x-1/3 -translate-y-1/3"
-                aria-hidden="true"></div>
-              <p class="font-display font-semibold text-base mb-1 relative z-10">Richiedi un preventivo</p>
-              <p class="font-body text-xs text-blue-200 mb-4 relative z-10">Risposta entro 24h lavorative</p>
-              <a href="index.html#contatti"
-                class="relative z-10 inline-block w-full text-center bg-white text-brand-blue font-body font-medium text-sm py-2.5 rounded-xl hover:bg-gray-50 transition-colors duration-200">
-                Contattaci →
-              </a>
-            </div>
-          </div>
-    
-          <div class="sidebar-footer-item border-t border-gray-100 px-6 py-4 flex flex-col gap-1">
-            <div class="flex items-center gap-2">
-              <svg class="w-3.5 h-3.5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              <a href="tel:0302593954"
-                class="font-body text-xs text-gray-500 hover:text-brand-blue transition-colors">030-2593954</a>
-            </div>
-            <div class="flex items-center gap-2">
-              <svg class="w-3.5 h-3.5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              </svg>
-              <p class="font-body text-xs text-gray-500">Mazzano (BS), 25080</p>
-            </div>
-          </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-3.5 h-3.5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          </svg>
+          <p class="font-body text-xs text-gray-500">Mazzano (BS), 25080</p>
         </div>
-      </aside>
+      </div>
+    </div>
+  </aside>
 
     <main class="pt-36 pb-24 min-h-screen">
         <div class="max-w-4xl mx-auto px-6">
@@ -393,8 +401,8 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
                 <div class="col-span-1 lg:col-span-2">
-                    <img src="./coop81_logo.avif" alt="Logo Coop81" width="120" height="48"
-                        class="h-10 w-auto mb-5 brightness-0 invert" />
+                    <img src="./coop81_logo_footer_clean.png" alt="Logo Coop81" width="220" height="100"
+                        class="h-12 w-auto mb-5 brightness-0 invert" />
                     <p class="font-body text-sm text-gray-400 leading-relaxed max-w-xs mb-6">
                         Cooperativa Sociale impegnata nell'inclusione lavorativa e nell'erogazione di servizi
                         professionali a imprese e strutture civili. Dal 1981 sul territorio bresciano.

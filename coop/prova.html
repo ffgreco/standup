@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Offerta Tecnica – COOP 81 Società Cooperativa Sociale</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue-dark: #0a2d5a;
+    --blue-mid: #1455a4;
+    --blue-light: #3d8fdc;
+    --accent: #e8f2fc;
+    --text: #1a1a2e;
+    --muted: #5a6a7e;
+    --border: #cdd9e8;
+    --white: #ffffff;
+    --bg: #f5f8fc;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--text);
+    background: var(--bg);
+  }
+
+  /* ── COVER ── */
+  .cover {
+    background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-mid) 60%, var(--blue-light) 100%);
+    color: white;
+    padding: 60px 80px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .cover-logo img { height: 70px; filter: brightness(0) invert(1); }
+  .cover-divider { width: 80px; height: 3px; background: rgba(255,255,255,0.4); border-radius: 2px; }
+  .cover-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 4px;
+  }
+  .cover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    line-height: 1.15;
+    font-weight: 700;
+  }
+  .cover-subtitle {
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.80);
+    max-width: 540px;
+  }
+  .cover-badges {
+    display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px;
+  }
+  .badge {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: white;
+    font-size: 11.5px;
+    font-weight: 500;
+    padding: 5px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── LAYOUT ── */
+  .doc-body {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px 40px 80px;
+  }
+
+  /* ── CHAPTER HEADER ── */
+  .chapter {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 56px 0 28px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--blue-mid);
+  }
+  .chapter-number {
+    background: var(--blue-mid);
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+  .chapter-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--blue-dark);
+  }
+
+  /* ── SECTION HEADER ── */
+  .section-title {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    margin: 36px 0 12px;
+  }
+
+  /* ── SUBSECTION ── */
+  .subsection-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--blue-dark);
+    margin: 28px 0 10px;
+    padding-left: 12px;
+    border-left: 3px solid var(--blue-light);
+  }
+
+  p { margin-bottom: 14px; color: #2c3e54; }
+
+  /* ── INFO CARDS ── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .info-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 22px;
+    box-shadow: 0 2px 8px rgba(10,45,90,0.05);
+  }
+  .info-card h4 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    margin-bottom: 8px;
+  }
+  .info-card p {
+    font-size: 14px;
+    color: var(--text);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* ── CLIENT LIST ── */
+  .client-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    margin: 16px 0;
+  }
+  .client-item {
+    background: var(--accent);
+    border-left: 3px solid var(--blue-light);
+    padding: 8px 12px;
+    border-radius: 0 4px 4px 0;
+    font-size: 13.5px;
+    color: var(--blue-dark);
+    font-weight: 500;
+  }
+
+  /* ── MAP ── */
+  .map-container {
+    margin: 28px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 16px rgba(10,45,90,0.1);
+  }
+  .map-container img { width: 100%; display: block; }
+  .map-caption {
+    background: var(--blue-dark);
+    color: rgba(255,255,255,0.8);
+    font-size: 13px;
+    padding: 10px 18px;
+    text-align: center;
+  }
+
+  /* ── ORG TABLE ── */
+  .org-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    margin: 20px 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(10,45,90,0.07);
+  }
+  .org-table thead tr { background: var(--blue-dark); color: white; }
+  .org-table th {
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  .org-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+  }
+  .org-table tr:last-child td { border-bottom: none; }
+  .org-table tr:nth-child(even) td { background: var(--accent); }
+  .num-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px; height: 26px;
+    background: var(--blue-mid);
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 13px;
+  }
+
+  /* ── COMPLIANCE TABLE ── */
+  .compliance-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    margin: 20px 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(10,45,90,0.07);
+  }
+  .compliance-table thead tr { background: var(--blue-mid); color: white; }
+  .compliance-table th {
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  .compliance-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .compliance-table tr:last-child td { border-bottom: none; }
+  .compliance-table tr:nth-child(even) td { background: var(--accent); }
+  .doc-name {
+    font-weight: 700;
+    color: var(--blue-dark);
+  }
+  .freq-badge {
+    display: inline-block;
+    background: #e0eefc;
+    color: var(--blue-mid);
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+  }
+
+  /* ── DPI TABLE ── */
+  .dpi-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    margin: 20px 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(10,45,90,0.07);
+  }
+  .dpi-table thead tr { background: var(--blue-dark); color: white; }
+  .dpi-table th {
+    padding: 11px 14px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  .dpi-table th:first-child { text-align: left; }
+  .dpi-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+    color: var(--text);
+  }
+  .dpi-table td:first-child { text-align: left; font-weight: 600; color: var(--blue-dark); }
+  .dpi-table tr:last-child td { border-bottom: none; }
+  .dpi-table tr:nth-child(even) td { background: var(--accent); }
+  .check { color: #1a8f4e; font-size: 18px; font-weight: 700; }
+
+  /* ── BULLET LIST ── */
+  .styled-list {
+    list-style: none;
+    margin: 12px 0 20px;
+    padding: 0;
+  }
+  .styled-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14.5px;
+    color: #2c3e54;
+  }
+  .styled-list li:last-child { border-bottom: none; }
+  .styled-list li::before {
+    content: '';
+    display: block;
+    width: 6px; height: 6px;
+    min-width: 6px;
+    border-radius: 50%;
+    background: var(--blue-light);
+    margin-top: 8px;
+  }
+
+  /* ── NUMBERED STEPS ── */
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .step {
+    display: flex;
+    gap: 16px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 20px;
+  }
+  .step-num {
+    min-width: 36px; height: 36px;
+    background: var(--blue-mid);
+    color: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 15px;
+    margin-top: 2px;
+  }
+  .step-body h4 {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--blue-dark);
+    margin-bottom: 5px;
+  }
+  .step-body p { margin: 0; font-size: 14px; }
+
+  /* ── HIGHLIGHT BOX ── */
+  .highlight-box {
+    background: linear-gradient(135deg, #e8f2fc, #d0e6f9);
+    border-left: 4px solid var(--blue-mid);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    margin: 20px 0;
+    font-size: 14.5px;
+    color: var(--blue-dark);
+  }
+
+  /* ── OPERATIONS TABLE ── */
+  .ops-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin: 20px 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(10,45,90,0.07);
+  }
+  .ops-table thead tr { background: var(--blue-dark); color: white; }
+  .ops-table th {
+    padding: 11px 13px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 11.5px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  .ops-table td {
+    padding: 12px 13px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.6;
+  }
+  .ops-table tr:last-child td { border-bottom: none; }
+  .ops-table tr:nth-child(even) td { background: var(--accent); }
+  .op-title {
+    font-weight: 700;
+    color: var(--blue-mid);
+    margin-bottom: 5px;
+    font-size: 13.5px;
+  }
+
+  /* ── LQA TABLE ── */
+  .lqa-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    margin: 20px 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(10,45,90,0.07);
+  }
+  .lqa-table thead tr { background: var(--blue-mid); color: white; }
+  .lqa-table th {
+    padding: 11px 14px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+  .lqa-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+    color: var(--text);
+  }
+  .lqa-table td:first-child { text-align: left; }
+  .lqa-table tr:last-child td { border-bottom: none; }
+  .lqa-table tr:nth-child(even) td { background: var(--accent); }
+  .lqa-val { font-weight: 700; color: var(--blue-dark); }
+
+  /* ── STRUMENTI GRID ── */
+  .tools-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 20px 0;
+  }
+  .tool-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 18px;
+    box-shadow: 0 2px 8px rgba(10,45,90,0.05);
+  }
+  .tool-card h5 {
+    font-weight: 700;
+    color: var(--blue-mid);
+    margin-bottom: 6px;
+    font-size: 14px;
+  }
+  .tool-card p { font-size: 13.5px; color: #4a5a6e; margin: 0; }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--blue-dark);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 28px;
+    font-size: 12.5px;
+    margin-top: 60px;
+  }
+  .footer strong { color: white; }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: white; }
+    .doc-body { padding: 20px; }
+    .cover { padding: 40px; }
+  }
+
+  @media (max-width: 700px) {
+    .cover { padding: 36px 24px; }
+    .cover-title { font-size: 28px; }
+    .doc-body { padding: 24px 20px; }
+    .card-grid { grid-template-columns: 1fr; }
+    .client-grid { grid-template-columns: 1fr 1fr; }
+    .tools-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════ COVER ════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-logo">
+    <img src="./coop81_logo_footer_clean.png" alt="coop81 logo">
+  </div>
+  <div class="cover-divider"></div>
+  <div>
+    <span class="cover-tag">Offerta Tecnica</span>
+    <h1 class="cover-title">Relazione Tecnica<br>COOP 81</h1>
+    <p class="cover-subtitle">Società Cooperativa Sociale — Servizi di Igiene Ambientale e Global Service</p>
+  </div>
+  <div class="cover-badges">
+    <span class="badge">ISO 9001</span>
+    <span class="badge">ISO 14001</span>
+    <span class="badge">EMAS</span>
+    <span class="badge">Ecolabel</span>
+    <span class="badge">SA 8000</span>
+    <span class="badge">Mazzano (BS)</span>
+    <span class="badge">200+ dipendenti</span>
+  </div>
+</div>
+
+<!-- ════════════════════════════════ BODY ════════════════════════════════ -->
+<div class="doc-body">
+
+  <!-- ── A2 ── -->
+  <div class="chapter">
+    <span class="chapter-number">A2</span>
+    <h2 class="chapter-title">Qualità della Struttura Organizzativa</h2>
+  </div>
+
+  <!-- 1. Adeguatezza -->
+  <div class="section-title">1 — Adeguatezza della Struttura Organizzativa</div>
+  <p>COOP 81, con sede principale in Mazzano (BS), opera da oltre 7 anni nel settore dell'igiene ambientale e global service in realtà civili, ospedaliere ed industriali per la Pubblica Amministrazione, con focus specifico sulla Lombardia. L'organizzazione è in costante crescita, con un organico attuale di oltre <strong>200 dipendenti</strong>.</p>
+
+  <div class="card-grid">
+    <div class="info-card">
+      <h4>Sede Operativa</h4>
+      <p>Via Padana Superiore 74/d<br>Mazzano 25080 (BS)</p>
+    </div>
+    <div class="info-card">
+      <h4>Certificazioni</h4>
+      <p>ISO 9001 · ISO 14001 · EMAS<br>Ecolabel · SA 8000</p>
+    </div>
+    <div class="info-card">
+      <h4>Organico</h4>
+      <p>Oltre <strong>200 dipendenti</strong> attivi in appalti analoghi e disponibili per necessità contingenti</p>
+    </div>
+    <div class="info-card">
+      <h4>Olimpiadi 2026</h4>
+      <p>Fornitori ufficiali per il servizio di pulizie — <strong>Fondazione Milano Cortina</strong></p>
+    </div>
+  </div>
+
+  <div class="subsection-title">Struttura Logistica e Presenza Territoriale</div>
+  <p>COOP 81 dispone di un presidio operativo di zona con ufficio attrezzato, magazzino/officina e svariata squadre professionali per attività periodiche specializzate, straordinarie, emergenza e sanificazioni.</p>
+
+  <p class="section-title" style="margin-top:20px;">Principali Clienti in Regione</p>
+
+  <p><strong>Comuni:</strong></p>
+  <div class="client-grid">
+    <div class="client-item">Azzano Mella</div>
+    <div class="client-item">Gavardo</div>
+    <div class="client-item">Lovere</div>
+    <div class="client-item">Mazzano</div>
+    <div class="client-item">Nave</div>
+    <div class="client-item">Paitone</div>
+    <div class="client-item">Rezzato</div>
+    <div class="client-item">Rudiano</div>
+    <div class="client-item">Toscolano Maderno</div>
+    <div class="client-item">Travagliato</div>
+    <div class="client-item">Valvestino</div>
+    <div class="client-item">Vobarno</div>
+  </div>
+
+  <p style="margin-top:14px;"><strong>Altri enti pubblici:</strong> Azienda Socio Sanitaria Territoriale del Garda · Consorzio Forestale Terra Tra i Due Laghi · Università degli Studi di Brescia</p>
+  <p><strong>Appalti privati di spicco:</strong> Union Brescia · Gruppo Camozzi · Franchini Lamiere · Cast Alimenti · Croce Blu di Brescia ODV</p>
+
+  <div class="map-container">
+    <img src="./map.png" alt="mappa coop81">
+    <div class="map-caption">Mappa della presenza territoriale — ▼ freccia rossa: sede di Mazzano (BS)</div>
+  </div>
+
+  <div class="subsection-title">Fornitori e Logistica</div>
+  <p>L'impresa si avvale di collaboratori con fornitori di altissima qualità a livello nazionale e di aziende locali che garantiscono tempi di consegna immediati — materiali, parti di ricambio, mezzi e attrezzature direttamente in cantiere.</p>
+
+  <!-- ── Struttura Organizzativa ── -->
+  <div class="section-title">Struttura Organizzativa</div>
+  <p>I gruppi di lavoro operativi saranno costantemente supervisionati da responsabili reperibili <strong>H24</strong>.</p>
+
+  <div class="subsection-title">A — Struttura Direzionale</div>
+  <p>Assicura la conformità alle specifiche contrattuali. Il <strong>Direttore di Produzione</strong> (Bettio Nicola, Esp. > 20 anni) coordina aspetti giuridico-amministrativi e gestionali con piena autonomia decisionale. I servizi centrali comprendono: Acquisti, Risorse Umane, Amministrazione, Qualità–Ambiente–Sicurezza.</p>
+
+  <div class="subsection-title">B — Struttura di Governo</div>
+  <ul class="styled-list">
+    <li><strong>Capo Area:</strong> Sig.ra K.M. (Esp. >10 anni) e Sig.ra M.J. (Esp. >5 anni) — controllo continuo e formazione risorse</li>
+    <li><strong>Back-office:</strong> Sig.ra P.L. (>3 anni), Sig.ra D.S. (>2 anni), Sig.ra E.M. (>15 anni, coordinatrice)</li>
+    <li><strong>Amministrazione:</strong> Sig.ra F.S. (>30 anni), Sig.ra A.D. (laurea umanistica)</li>
+    <li><strong>Squadre d'emergenza/periodiche:</strong> 7 caposquadra (P.C., U.C., B.M., K.S., K.Y., C.M., T.C.) + 4 unità ciascuno, con furgoni aziendali, formati DPI 3ª categoria, piattaforme aeree e spazi confinati</li>
+  </ul>
+
+  <div class="subsection-title">C — Struttura Operativa di Appalto</div>
+  <p>Squadre Operative coordinate dal Responsabile del Servizio (RdS) e supervisionate dal Capo Squadra (CS), presenti nei giorni e orari di servizio. Interazione continua in presenza o remoto tramite Microsoft Teams, con reperibilità operativa <strong>H24 7/7</strong>.</p>
+
+  <!-- ── Dimensionamento ── -->
+  <div class="section-title">Dimensionamento della Struttura Organizzativa</div>
+  <table class="org-table">
+    <thead>
+      <tr><th>Figura</th><th style="text-align:center">N</th><th>Qualifica / Livello</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Dir. di Produzione</td><td style="text-align:center"><span class="num-badge">1</span></td><td>Quadro</td></tr>
+      <tr><td>Resp. programmazione</td><td style="text-align:center"><span class="num-badge">1</span></td><td>Quadro</td></tr>
+      <tr><td>Acquisti e approvv.</td><td style="text-align:center"><span class="num-badge">1</span></td><td>Quadro – Imp. 5°</td></tr>
+      <tr><td>Amministrazione</td><td style="text-align:center"><span class="num-badge">2</span></td><td>Quadro – Imp. 5°/6°</td></tr>
+      <tr><td>Risorse umane</td><td style="text-align:center"><span class="num-badge">1</span></td><td>Quadro – Imp. 5°</td></tr>
+      <tr><td>Servizi informativi</td><td style="text-align:center"><span class="num-badge">3</span></td><td>Quadro – Imp. 5°</td></tr>
+      <tr><td>Back-office</td><td style="text-align:center"><span class="num-badge">3</span></td><td>Vari</td></tr>
+      <tr><td>Capo Area (CA)</td><td style="text-align:center"><span class="num-badge">2</span></td><td>Imp. 5° Liv.</td></tr>
+      <tr><td>Resp. del Servizio (RdS)</td><td style="text-align:center"><span class="num-badge">1</span></td><td>Op. Liv 3°</td></tr>
+      <tr><td>Vice RdS</td><td style="text-align:center"><span class="num-badge">1</span></td><td>Op. Liv 2°</td></tr>
+      <tr><td>Addetti e C. Squadra</td><td style="text-align:center"><span class="num-badge">16</span></td><td>Op. Liv 3°</td></tr>
+      <tr><td>Team Sanificazioni</td><td style="text-align:center"><span class="num-badge">7</span></td><td>Op. 4° Liv</td></tr>
+      <tr><td>Squadre di supporto</td><td style="text-align:center"><span class="num-badge">40</span></td><td>Op. Liv 3°</td></tr>
+      <tr><td>Add. manutenzioni</td><td style="text-align:center"><span class="num-badge">8</span></td><td>Op. Liv 3°</td></tr>
+      <tr><td>Add. alle sostituzioni</td><td style="text-align:center"><span class="num-badge">16</span></td><td>Op. Liv 2°</td></tr>
+      <tr><td>Team Controllo</td><td style="text-align:center"><span class="num-badge">7</span></td><td>Cons. est. – Imp. 5°</td></tr>
+      <tr><td>Medico, RSPP</td><td style="text-align:center"><span class="num-badge">3</span></td><td>Cons. est.</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ── Adempimenti Retributivi ── -->
+  <div class="section-title">Accertamento Adempimenti Retributivi</div>
+  <p>Sistema di comunicazione trimestrale per la verifica del pagamento degli stipendi e degli oneri previdenziali, con fascicolo digitale inviato ogni 90 giorni:</p>
+
+  <table class="compliance-table">
+    <thead>
+      <tr><th>Azione / Documento</th><th>Contenuto Specifico</th><th>Frequenza</th><th>Canale</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="doc-name">DURC Online</span></td>
+        <td>Attestazione regolarità INPS / INAIL / Cassa Edile</td>
+        <td><span class="freq-badge">Trimestrale</span></td>
+        <td>Cartella Cloud / PEC</td>
+      </tr>
+      <tr>
+        <td><span class="doc-name">Report LUL (estratto)</span></td>
+        <td>Elenco nominativo personale dedicato alla commessa</td>
+        <td><span class="freq-badge">Trimestrale</span></td>
+        <td>PDF protetto</td>
+      </tr>
+      <tr>
+        <td><span class="doc-name">Distinte di Bonifico</span></td>
+        <td>Evidenza bancaria con CRO/TRN dei pagamenti stipendi</td>
+        <td><span class="freq-badge">Trimestrale</span></td>
+        <td>Cartella Cloud</td>
+      </tr>
+      <tr>
+        <td><span class="doc-name">Autocertificazione ex DPR 445/2000</span></td>
+        <td>Dichiarazione assolvimento obblighi retributivi e contributivi</td>
+        <td><span class="freq-badge">Trimestrale</span></td>
+        <td>PEC (allegata fattura/SAL)</td>
+      </tr>
+      <tr>
+        <td><span class="doc-name">Quietanza Modelli F24</span></td>
+        <td>Prova del versamento ritenute IRPEF e contributi</td>
+        <td><span class="freq-badge">*Mensile</span></td>
+        <td>Cartella Cloud</td>
+      </tr>
+      <tr>
+        <td><span class="doc-name">Nulla osta del dipendente</span></td>
+        <td>Quietanza firmata di ricevimento di quanto spettante</td>
+        <td><span class="freq-badge">Trimestrale</span></td>
+        <td>Cartella Cloud</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="highlight-box">
+    COOP 81 adotta esclusivamente metodi di pagamento tracciabili (L. 205/2017). Ogni bonifico recherà causale specifica riferita al mese di competenza e, ove possibile, al CIG dell'appalto. Tutta la documentazione sarà prodotta nel rispetto del <strong>GDPR</strong>, oscurando i dati sensibili non necessari alla verifica di regolarità.
+  </div>
+
+  <!-- ── 2 Sostituzioni ── -->
+  <div class="chapter">
+    <span class="chapter-number">A2.2</span>
+    <h2 class="chapter-title">Efficienza delle Modalità e Tempi di Sostituzione degli Addetti Assenti</h2>
+  </div>
+  <ul class="styled-list">
+    <li>Prolungamento dell'orario di lavoro degli operatori già presenti nell'appalto (compatibile con le 40 ore CCNL per singolo operatore)</li>
+    <li>Intervento di un operatore di squadra nel minor tempo possibile — le squadre sono mediamente composte da almeno 4 persone</li>
+    <li>Avviso immediato ai dipendenti preposti alla sostituzione; 16 operatori in appalti limitrofi già formati e informati su sicurezza e peculiarità dei siti</li>
+    <li>Archivio curriculum idonei costantemente aggiornato per garantire l'integrità del numero di risorse disponibili</li>
+  </ul>
+
+  <!-- ── 3 Sicurezza ── -->
+  <div class="chapter">
+    <span class="chapter-number">A2.3</span>
+    <h2 class="chapter-title">Efficienza delle Procedure in Materia di Sicurezza sul Lavoro</h2>
+  </div>
+  <p>COOP 81 dispone di un <strong>Team di Sicurezza</strong> strutturato nel rispetto del D.M. 81/2008:</p>
+  <div class="card-grid">
+    <div class="info-card">
+      <h4>R.S.P.P. Esterno</h4>
+      <p>Responsabile Servizio Prevenzione e Protezione — aggiorna il DUVRI e il documento di Valutazione dei Rischi</p>
+    </div>
+    <div class="info-card">
+      <h4>Medico Competente</h4>
+      <p>Monitoraggio sanitario del personale e collaborazione alla stesura del DVR</p>
+    </div>
+    <div class="info-card">
+      <h4>R.L.S. (AT)</h4>
+      <p>Rappresentante dei Lavoratori per la Sicurezza, eletto dagli operatori</p>
+    </div>
+    <div class="info-card">
+      <h4>Formazione</h4>
+      <p>In collaborazione con <strong>Digitech Center</strong> — Area Iso, corsi su sicurezza, DPI 3ª categoria, piattaforme aeree e spazi confinati</p>
+    </div>
+  </div>
+
+  <div class="subsection-title">Dispositivi di Protezione Individuale (DPI)</div>
+  <table class="dpi-table">
+    <thead>
+      <tr><th>DPI</th><th>Servizio Ordinario</th><th>Servizio Periodico</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Guanti</td><td class="check">✔</td><td class="check">✔</td></tr>
+      <tr><td>Scarpe antiscivolo</td><td class="check">✔</td><td class="check">✔</td></tr>
+      <tr><td>Cartellonistica</td><td class="check">✔</td><td class="check">✔</td></tr>
+      <tr><td>Giacca antifreddo</td><td class="check">✔</td><td class="check">✔</td></tr>
+      <tr><td>Occhiali protettivi</td><td class="check">✔</td><td class="check">✔</td></tr>
+      <tr><td>Sistemi di ritenuta</td><td>—</td><td class="check">✔</td></tr>
+      <tr><td>Giacca alta visibilità</td><td>—</td><td class="check">✔</td></tr>
+      <tr><td>Cassetta pronto soccorso</td><td class="check">✔</td><td class="check">✔</td></tr>
+      <tr><td>Tappi per orecchie</td><td>—</td><td class="check">✔</td></tr>
+      <tr><td>Casco</td><td>—</td><td class="check">✔</td></tr>
+    </tbody>
+  </table>
+
+  <div class="subsection-title">Lavoro in Solitudine — Misure di Prevenzione</div>
+  <ul class="styled-list">
+    <li>Formazione specifica per l'attività lavorativa solitaria e gestione dell'emergenza</li>
+    <li>Cellulare aziendale programmato sul numero di emergenza</li>
+    <li>Dispositivi <strong>"Uomo a terra" / "Man Down"</strong> — localizzatore satellitare GPS con rilevamento postura, rilevazione movimento, allarme SOS automatico e manuale</li>
+    <li>Valutazione medica specifica di idoneità al lavoro solitario</li>
+  </ul>
+
+  <div class="subsection-title">Gestione dei Near Miss</div>
+  <p>Il processo di gestione dei quasi-incidenti segue le fasi:</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body"><h4>Identificazione e Segnalazione</h4><p>Chiara definizione aziendale di near miss; segnalazione scritta al Responsabile di servizio con data, luogo, soggetti coinvolti e fattori influenzanti</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body"><h4>Definizione di Priorità</h4><p>Esame per stabilire pertinenza e rilevanza; definizione dei criteri di priorità sulle potenziali conseguenze negative</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body"><h4>Identificazione Cause alla Radice</h4><p>Analisi svolta dal team sicurezza (RSPP, Medico, RLS, Preposto) per ricerca delle cause e delle soluzioni adeguate</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body"><h4>Comunicazione e Approvazione</h4><p>Soluzioni vagliate e approvate dal Datore di Lavoro e comunicate ai responsabili dell'attuazione</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body"><h4>Monitoraggio Attuazione</h4><p>Tracciamento di tutte le azioni per verificarne l'esecuzione corretta e nei tempi previsti</p></div>
+    </div>
+  </div>
+
+  <!-- ── 4 Risorse ── -->
+  <div class="chapter">
+    <span class="chapter-number">A2.4</span>
+    <h2 class="chapter-title">Soluzioni per il Miglioramento delle Condizioni delle Risorse</h2>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body"><h4>Sensibilità verso le esigenze del dipendente</h4><p>Riduzioni di orario, aspettative non retribuite, articolazione orizzontale/verticale dell'orario</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body"><h4>Ricongiungimento famigliare</h4><p>Variazioni di orario e facoltà di trasferimento per il benessere famigliare</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body"><h4>Aumento delle competenze</h4><p>Formazione continua per acquisire capacità tali da assumere ruoli di maggiore responsabilità</p></div>
+    </div>
+  </div>
+  <p>COOP81 adotta un <strong>Codice Etico</strong> verso i dipendenti e privilegia gruppi di lavoro con operatori automuniti, favorendo il car-sharing e la sostenibilità ambientale. Obiettivo primario: contenimento del turn-over.</p>
+
+  <!-- ── A3 ── -->
+  <div class="chapter">
+    <span class="chapter-number">A3</span>
+    <h2 class="chapter-title">Misure Formative e Informative</h2>
+  </div>
+  <div class="subsection-title">Piano Informativo e di Sensibilizzazione</div>
+  <p>In caso di aggiudicazione, COOP 81 attiva una procedura strutturata di avvio con le seguenti fasi:</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">•</div>
+      <div class="step-body"><h4>Raccolta dei dati</h4><p>Esame documentazione tecnica di gara, pianificazione interventi e programmazione attività propedeutiche</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">•</div>
+      <div class="step-body"><h4>Riunioni organizzative</h4><p>Incontri tra Direzione e responsabili di area per definire gruppo di lavoro e specifiche tecniche</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body"><h4>Aggiudicazione</h4><p>Il RdS contatta i referenti dell'Ente, concorda la pianificazione e verifica le fasce orarie di intervento per area/edificio</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body"><h4>Personale</h4><p>Assunzione secondo norme contrattuali, identificazione "personalità chiave", valutazione esperienze pregresse</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body"><h4>Formazione</h4><p>Prima dell'avvio o entro 60 giorni. Programma mirato al "saper fare" e "saper essere", in aula e on the job</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body"><h4>Metodologia operativa</h4><p>Sistemi ecologici, finestre aperte, uso razionale delle luci, badge di riconoscimento e divisa aziendale per tutto il personale</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body"><h4>Consegna modulistica</h4><p>Cronoprogramma personalizzato per struttura, in formato cartaceo ed elettronico, chiaro e non equivocabile</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-body"><h4>Prime verifiche</h4><p>Controllo immediato della programmazione, organizzazione e calendarizzazione degli interventi concordati</p></div>
+    </div>
+  </div>
+
+  <!-- ── B1 ── -->
+  <div class="chapter">
+    <span class="chapter-number">B1</span>
+    <h2 class="chapter-title">Metodologie Tecnico Operative per il Servizio di Pulizie</h2>
+  </div>
+  <p>Tutti i prodotti detergenti sono conformi ai <strong>C.A.M. Criteri Ambientali Minimi</strong> con etichetta ecologica Tipo I (Ecolabel EU). I disinfettanti sono autorizzati dal Ministero della Salute con marchio <strong>P.M.C.</strong></p>
+
+  <div class="subsection-title">Sistemi e Attrezzature Principali</div>
+  <div class="tools-grid">
+    <div class="tool-card">
+      <h5>Sistema Globo Filmop</h5>
+      <p>Telaio pieghevole con micro alette per operazioni senza contatto con le mani. Compatibile con impregnazione, preimpregnazione e strizzatura tradizionale.</p>
+    </div>
+    <div class="tool-card">
+      <h5>Sistema Unilav Side Grip</h5>
+      <p>Flacone con manopola di dosaggio per scale e spazi ridotti. Codice colore per identificazione ambienti.</p>
+    </div>
+    <div class="tool-card">
+      <h5>Panni Microfibra Ecolabel</h5>
+      <p>Ricondizionati ad alte temperature. Sostituzione ogni cambio ambiente o ogni 15–20 m² di superficie.</p>
+    </div>
+    <div class="tool-card">
+      <h5>Panni Antibatterici agli Ioni d'Argento</h5>
+      <p>Eliminano il 99% di batteri e virus con sola acqua, abbinando prestazioni pulenti e proprietà battericide.</p>
+    </div>
+    <div class="tool-card">
+      <h5>Sistemi di Dosaggio Automatizzati</h5>
+      <p>Abbattono il consumo di sostanze chimiche, garantendo le corrette diluizioni (capsule Eco Caps Sutter).</p>
+    </div>
+    <div class="tool-card">
+      <h5>Macchinari Ecologici</h5>
+      <p>Kärcher Eco-Efficiency, Lavasciuga Fimap Eco Mode, Nilfisk a batteria. Rumore &lt;80 dBA. Filtri HEPA.</p>
+    </div>
+    <div class="tool-card">
+      <h5>Carrelli Multiuso (PSV)</h5>
+      <p>Configurati su misura con software dedicato in collaborazione con Magris (Plastica Seconda Vita).</p>
+    </div>
+    <div class="tool-card">
+      <h5>Codice Colore Universale</h5>
+      <p>Adottato per contenitori, mop e panni per evitare contaminazioni crociate tra le diverse zone.</p>
+    </div>
+  </div>
+
+  <div class="subsection-title">Principali Modalità di Esecuzione — Aree Comuni e Uffici</div>
+  <table class="ops-table">
+    <thead>
+      <tr><th>Operazione</th><th>Attrezzature / Prodotti</th><th>DPI</th><th>Controllo</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="op-title">Vuotatura Cestini</div>Svuotamento nel vano carrello, sanificazione con panno microfibra Ecolabel, sostituzione sacchetto</td>
+        <td>Panni microfibra Ecolabel<br>Ondaklor / Onda Sutter PMC</td>
+        <td>Mascherina<br>Guanti<br>Scarpe antiscivolo</td>
+        <td>Controllo tutti i cestini. Registrazione su modulo / app</td>
+      </tr>
+      <tr>
+        <td><div class="op-title">Spolveratura Arredi</div>Top Clean Filmop per superfici piane. Panni microfibra Ecolabel per mobili, telefoni, suppellettili</td>
+        <td>Top Clean Filmop<br>Diamond Ecolabel / Onda PMC Sutter</td>
+        <td>Mascherina<br>Guanti<br>Scarpe antiscivolo</td>
+        <td>Verifica tutte le superfici. Registrazione su modulo / app</td>
+      </tr>
+      <tr>
+        <td><div class="op-title">Pulizia Vetri</div>Kit vetri (asta telescopica, vello, spugna, raschietto) + Cleano IPC per nebulizzazione senza sprechi</td>
+        <td>Kit vetri + Cleano IPC<br>Multi detergente in capsule Ecolabel</td>
+        <td>Mascherina<br>Guanti<br>Scarpe antiscivolo</td>
+        <td>Verifica assenza residui. Registrazione su modulo / app</td>
+      </tr>
+      <tr>
+        <td><div class="op-title">Lavaggio Pavimenti</div>Segnaletica di avviso, sistema Globo Filmop. Per spazi ridotti: sistema Unilav con serbatoio incorporato</td>
+        <td>Globo Filmop / Unilav<br>Floor Ecolabel / Onda PMC Sutter</td>
+        <td>Segnale avviso<br>Mascherina / Guanti<br>Scarpe antiscivolo</td>
+        <td>Verifica assenza residui. Registrazione su modulo / app</td>
+      </tr>
+      <tr>
+        <td><div class="op-title">Aspirazione Meccanica</div>Cavo su spalla. Per superfici grandi: macchine professionali. Per tessuti: spazzola dedicata + panno detergente</td>
+        <td>Aspirapolvere / battitappeto<br>Aspiratore spallabile cavo/batteria</td>
+        <td>Mascherina<br>Guanti<br>Scarpe antiscivolo</td>
+        <td>Svuotamento sacchetto. Registrazione operazione su scheda / app</td>
+      </tr>
+      <tr>
+        <td><div class="op-title">Deragnatura</div>Deragnatore su asta telescopica o Snake Filmop per superfici particolari. Evita uso di scale</td>
+        <td>Deragnatore / scovolo<br>Telaio Snake Filmop</td>
+        <td>Mascherina<br>Guanti<br>Scarpe antiscivolo</td>
+        <td>Verifica assenza ragnatele. Registrazione su modulo / app</td>
+      </tr>
+      <tr>
+        <td><div class="op-title">Disinfezione Punti di Contatto</div>Interruttori, maniglie, pulsantiere. Panno microfibra + disinfettante PMC con movimenti rettilinei</td>
+        <td>Panni microfibra Ecolabel<br>Onda PMC disinfettante</td>
+        <td>Mascherina<br>Guanti<br>Scarpe antiscivolo</td>
+        <td>Verifica superfici. Registrazione su scheda / app</td>
+      </tr>
+      <tr>
+        <td><div class="op-title">Lavaggio Meccanico Pavimenti</div>Lavasciuga uomo a bordo o a terra. Per spazi ristretti: lavasciuga leggera di facile trasporto</td>
+        <td>Lavasciuga professionale<br>Floor / Multi Ecolabel, Onda PMC Sutter</td>
+        <td>Segnale avviso<br>Mascherina / Guanti<br>Scarpe antiscivolo</td>
+        <td>Verifica macchinari. Verifica residui dopo attività. Registrazione / app</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="subsection-title">Area Tipo — Servizi Igienici</div>
+  <table class="ops-table">
+    <thead>
+      <tr><th>Operazione</th><th>Attrezzature / Prodotti</th><th>DPI</th><th>Controllo</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="op-title">Lavaggio Pavimenti</div>Unilav Filmop in codice colore rosso. Per alta densità: mop ad alta assorbenza</td>
+        <td>Sistema Unilav Filmop / Aquva Vermop<br>Multi Ecolabel Sutter / Disinfettante PMC</td>
+        <td>Segnale avviso<br>Mascherina / Guanti<br>Scarpe antiscivolo</td>
+        <td>Verifica tutte le superfici. Registrazione modulo / app</td>
+      </tr>
+      <tr>
+        <td><div class="op-title">Lavaggio Sanitari</div>Lavabo, rubinetterie, piastrelle, distributori. WC: spazzola, sciacquone, detergente/disincrostante, panno rosso per esterno</td>
+        <td>Carrello prisma per bagni<br>Panni microfibra codice colore<br>Sgrassatore / Anticalcare / Disinfettante PMC</td>
+        <td>Segnale avviso<br>Mascherina / Guanti<br>Scarpe antiscivolo</td>
+        <td>Verifica tutte le superfici. Registrazione modulo / app</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ── B3 ── -->
+  <div class="chapter">
+    <span class="chapter-number">B3</span>
+    <h2 class="chapter-title">Sistemi di Controllo del Livello del Servizio</h2>
+  </div>
+  <p>La procedura di controllo rispetta le normative <strong>UNI EN 13549:2003</strong> e <strong>UNI ISO 2859-1:2007</strong>. Le check list vengono compilate via app su tablet/smartphone con aggiornamento in tempo reale.</p>
+
+  <div class="subsection-title">Livelli di Qualità Accettabile (LQA) per Area</div>
+  <table class="lqa-table">
+    <thead>
+      <tr><th>Area</th><th>% MQ</th><th>LQA</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Uffici</td><td>100%</td><td class="lqa-val">0,99</td></tr>
+      <tr><td>Parti comuni</td><td>100%</td><td class="lqa-val">0,99</td></tr>
+      <tr><td>Bagni</td><td>100%</td><td class="lqa-val">0,99</td></tr>
+      <tr><td>Foresteria</td><td>100%</td><td class="lqa-val">0,99</td></tr>
+      <tr><td>Laboratori / Aule</td><td>100%</td><td class="lqa-val">0,99</td></tr>
+      <tr><td>C. congressi / Sale</td><td>100%</td><td class="lqa-val">0,99</td></tr>
+      <tr><td>Ristorazione</td><td>100%</td><td class="lqa-val">0,99</td></tr>
+      <tr><td>Esterni</td><td>100%</td><td class="lqa-val">0,99</td></tr>
+    </tbody>
+  </table>
+
+  <p>Scala di valutazione: <strong>0</strong> = Non valutabile · <strong>NC</strong> = Non Conforme · <strong>1</strong> = Sufficiente · <strong>2</strong> = Buono · <strong>3</strong> = Ottimo. Autocontrollo random (10%) con panno bianco e foto confermativa via app.</p>
+
+  <div class="subsection-title">Strumenti di Misurazione della Qualità</div>
+  <div class="tools-grid">
+    <div class="tool-card"><h5>Scala di Bacharach</h5><p>Misura il grado di polvere su scala 0–9</p></div>
+    <div class="tool-card"><h5>Rilevatore PM10</h5><p>Misura particelle sottili presenti nell'aria</p></div>
+    <div class="tool-card"><h5>Bioluminometro</h5><p>Monitoraggio igiene superfici, fino a 500 misure</p></div>
+    <div class="tool-card"><h5>Misuratore Microclimatico</h5><p>Portata, pressione, temperatura e umidità dell'aria</p></div>
+    <div class="tool-card"><h5>Test Carica Batterica</h5><p>Piastra agarizzata, incubazione a 37°C, conta colonie</p></div>
+    <div class="tool-card"><h5>Vibrometro</h5><p>Controllo vibrazioni emesse dai macchinari</p></div>
+    <div class="tool-card"><h5>Bassoumetro</h5><p>Verifica polvere su superfici e pavimenti</p></div>
+    <div class="tool-card"><h5>Glossmetro</h5><p>Grado di lucido e brillantezza dei pavimenti</p></div>
+    <div class="tool-card"><h5>Fonometro</h5><p>Misura rumorosità — sicurezza acustica</p></div>
+    <div class="tool-card"><h5>Sistema Informatico / App</h5><p>Check list, call center, programmazione e reportistica in tempo reale</p></div>
+  </div>
+
+</div><!-- /doc-body -->
+
+<div class="footer">
+  <strong>COOP 81 Società Cooperativa Sociale</strong> — Via Padana Superiore 74/d, Mazzano 25080 (BS)<br>
+  Firmato digitalmente da: DE CATALDO ANNA — Data: 06/02/2026
+</div>
+
+</body>
+</html>
