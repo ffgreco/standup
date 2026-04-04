@@ -1,0 +1,17 @@
+# robots.txt – Coop81 Società Cooperativa Sociale
+# https://soccoop81.it
+
+User-agent: *
+Allow: /
+
+# Blocca cartelle non pubbliche 
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /cgi-bin/
+
+# Evita parametri URL duplicati (es. ?utm_source=...)
+Disallow: /*?*
+
+# Sitemap
+Sitemap: https://soccoop81.it/sitemap.xml
