@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Standup Agency | Video Organici per Centri Estetici e Saloni</title>
+<meta name="description" content="Aumenta le clienti del tuo centro estetico o salone di bellezza con video organici professionali per Instagram Reels e TikTok. Nessun budget pubblicitario necessario.">
+<meta name="keywords" content="video estetiste, marketing centro estetico, reels saloni di bellezza, agenzia marketing beauty, tiktok estetista, trovare clienti estetica">
+<meta name="author" content="Standup Agency">
+
+<meta property="og:title" content="Standup Agency | Video Organici per Estetiste">
+<meta property="og:description" content="Creiamo video organici che portano nuove clienti nel tuo salone — senza spendere un euro in pubblicità.">
+<meta property="og:image" content="img/full-logo.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="shortcut icon" href="img/full-logo.png" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A96E;
+    --gold-light: #e8d5b0;
+    --gold-dark: #9a7a47;
+    --ink: #1C1009;
+    --ink-soft: #2e2016;
+    --cream: #FAF6F0;
+    --cream-dark: #F0E8DC;
+    --stone: #7a6a5a;
+    --stone-light: #b0a090;
+    --white: #ffffff;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--ink);
+    padding: 14px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 0.5px solid #3a2510;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Spazio tra logo e testo */
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.5px;
+    text-decoration: none;
+  }
+  .nav-logo img {
+    height: 28px; /* Altezza del logo nell'header */
+    width: auto;
+    object-fit: contain;
+  }
+  .nav-logo span { color: #fff; font-weight: 300; }
+  .nav-cta {
+    background: var(--gold);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 9px 20px;
+    border-radius: 3px;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--gold-light); }
+
+  /* HERO */
+  .hero {
+    background: var(--ink);
+    padding: 80px 32px 72px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(ellipse 600px 400px at 50% 0%, #3d1f0a 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201,169,110,0.12);
+    border: 0.5px solid rgba(201,169,110,0.35);
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    font-weight: 500;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(40px, 8vw, 64px);
+    line-height: 1.1;
+    font-weight: 300;
+    color: var(--cream);
+    margin-bottom: 10px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 400;
+  }
+  .hero h1 strong {
+    font-weight: 700;
+    font-style: normal;
+    color: #fff;
+    display: block;
+  }
+  .hero-sub {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--stone-light);
+    max-width: 480px;
+    margin: 24px auto 40px;
+    font-weight: 300;
+  }
+  .hero-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+  .pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(201,169,110,0.08);
+    border: 0.5px solid rgba(201,169,110,0.25);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 11px;
+    color: var(--gold-light);
+    font-weight: 400;
+  }
+  .pill::before {
+    content: '✓';
+    font-size: 10px;
+    color: var(--gold);
+  }
+  .btn-primary {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 18px 40px;
+    border-radius: 3px;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: all 0.2s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .hero-trust {
+    margin-top: 16px;
+    font-size: 11px;
+    color: #5a4a3a;
+    letter-spacing: 0.3px;
+  }
+
+  /* DIVIDER */
+  .divider-line {
+    height: 0.5px;
+    background: var(--cream-dark);
+    margin: 0;
+  }
+
+  /* SECTION BASE */
+  section { padding: 72px 32px; }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    font-weight: 500;
+    margin-bottom: 12px;
+    font-family: var(--sans);
+  }
+
+  h2 {
+    font-family: var(--serif);
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  h2 em { font-style: italic; color: var(--gold-dark); }
+  h2 strong { font-weight: 700; }
+
+  .section-intro {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--stone);
+    max-width: 520px;
+    font-weight: 300;
+    margin-bottom: 48px;
+  }
+
+  /* PAIN SECTION */
+  .pain-section { background: var(--cream); }
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .pain-card {
+    background: var(--white);
+    border: 0.5px solid var(--cream-dark);
+    border-radius: 8px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .pain-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--cream-dark);
+  }
+  .pain-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--cream-dark);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    font-size: 16px;
+  }
+  .pain-card h3 {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gold-dark);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .pain-card p {
+    font-family: var(--serif);
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--stone);
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  /* SOLUTION SECTION */
+  .solution-section { background: var(--ink); }
+  .solution-section h2 { color: var(--cream); }
+  .solution-section .section-label { color: var(--gold); }
+  .solution-section .section-intro { color: var(--stone-light); }
+
+  .benefit-list { display: flex; flex-direction: column; gap: 0; }
+  .benefit-item {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 24px;
+    padding: 28px 0;
+    border-bottom: 0.5px solid #2e1e0e;
+    align-items: start;
+  }
+  .benefit-item:last-child { border-bottom: none; }
+  .benefit-num {
+    font-family: var(--serif);
+    font-size: 52px;
+    font-weight: 300;
+    color: #2e1e0e;
+    line-height: 1;
+    text-align: right;
+    padding-top: 4px;
+  }
+  .benefit-content h3 {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--gold-light);
+    margin-bottom: 8px;
+  }
+  .benefit-content p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--stone-light);
+    font-weight: 300;
+  }
+
+  /* METRICS */
+  .metrics-section { background: var(--cream-dark); }
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2px;
+    background: var(--cream-dark);
+    border: 0.5px solid #d0c0aa;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 48px;
+  }
+  .metric-card {
+    background: var(--white);
+    padding: 28px 20px;
+    text-align: center;
+  }
+  .metric-num {
+    font-family: var(--serif);
+    font-size: 42px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .metric-num span { color: var(--gold-dark); }
+  .metric-label {
+    font-size: 11px;
+    color: var(--stone);
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: 0.2px;
+  }
+  .testimonials { display: flex; flex-direction: column; gap: 16px; }
+  .testi-card {
+    background: var(--white);
+    border: 0.5px solid var(--cream-dark);
+    border-radius: 8px;
+    padding: 24px 28px;
+  }
+  .testi-text {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+  }
+  .testi-text::before { content: '\201C'; color: var(--gold); margin-right: 2px; }
+  .testi-text::after  { content: '\201D'; color: var(--gold); margin-left: 2px; }
+  .testi-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .testi-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--cream-dark);
+    border: 0.5px solid #d0c0aa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gold-dark);
+    flex-shrink: 0;
+  }
+  .testi-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .testi-place {
+    font-size: 11px;
+    color: var(--stone);
+    margin-top: 2px;
+  }
+
+  /* PROCESS */
+  .process-section { background: var(--white); }
+  .steps { display: flex; flex-direction: column; gap: 0; }
+  .step {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 20px;
+    padding: 28px 0;
+    border-bottom: 0.5px solid var(--cream-dark);
+    align-items: start;
+    position: relative;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .step-num {
+    width: 40px;
+    height: 40px;
+    border: 0.5px solid var(--cream-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--gold-dark);
+    background: var(--cream);
+    flex-shrink: 0;
+  }
+  .step-line {
+    width: 0.5px;
+    flex: 1;
+    background: var(--cream-dark);
+    min-height: 24px;
+  }
+  .step:last-child .step-line { display: none; }
+  .step h3 {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .step p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--stone);
+    font-weight: 300;
+  }
+  .step-tag {
+    display: inline-block;
+    background: var(--cream);
+    border: 0.5px solid var(--cream-dark);
+    border-radius: 3px;
+    padding: 3px 10px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  /* FAQ */
+  .faq-section { background: var(--white); }
+  .faq-list { display: flex; flex-direction: column; gap: 0; }
+  .faq-item {
+    border-bottom: 0.5px solid var(--cream-dark);
+    overflow: hidden;
+  }
+  .faq-q {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    cursor: pointer;
+    gap: 16px;
+  }
+  .faq-q-text {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .faq-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold-dark);
+    font-size: 18px;
+    font-weight: 300;
+    transition: transform 0.3s;
+    font-family: var(--sans);
+  }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+  .faq-item.open .faq-a { max-height: 200px; }
+  .faq-a p {
+    padding: 0 0 20px;
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--stone);
+    font-weight: 300;
+    max-width: 520px;
+  }
+
+  /* CTA FINALE */
+  .cta-section {
+    background: var(--ink);
+    padding: 80px 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(ellipse 500px 300px at 50% 100%, #3d1f0a 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cta-section h2 {
+    color: var(--cream);
+    max-width: 420px;
+    margin: 0 auto 12px;
+  }
+  .cta-sub {
+    font-size: 15px;
+    color: var(--stone-light);
+    max-width: 380px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+  .cta-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 360px;
+    margin: 0 auto 16px;
+  }
+  .cta-form input {
+    width: 100%;
+    padding: 14px 18px;
+    background: #2e2016;
+    border: 0.5px solid #5a3a1a;
+    border-radius: 3px;
+    font-size: 14px;
+    color: var(--cream);
+    font-family: var(--sans);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .cta-form input::placeholder { color: #5a4a3a; }
+  .cta-form input:focus { border-color: var(--gold); }
+  .btn-submit {
+    width: 100%;
+    background: var(--gold);
+    color: var(--ink);
+    border: none;
+    padding: 16px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: var(--sans);
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.3px;
+  }
+  .btn-submit:hover { background: var(--gold-light); }
+  .cta-trust {
+    font-size: 11px;
+    color: #5a4a3a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .cta-trust::before {
+    content: '🔒';
+    font-size: 11px;
+  }
+  .whatsapp-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--gold);
+    text-decoration: none;
+    transition: border-color 0.2s;
+  }
+  .whatsapp-link:hover { border-bottom-color: var(--gold); }
+
+  /* FOOTER */
+  footer {
+    background: #110a04;
+    padding: 40px 32px 28px;
+    border-top: 0.5px solid #2e1e0e;
+  }
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer-logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+  }
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .footer-links a {
+    font-size: 12px;
+    color: #5a4a3a;
+    text-decoration: none;
+    transition: color 0.2s;
+    letter-spacing: 0.3px;
+  }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-bottom {
+    border-top: 0.5px solid #2e1e0e;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .footer-copy {
+    font-size: 11px;
+    color: #3a2a1a;
+    letter-spacing: 0.3px;
+  }
+  .footer-love {
+    font-size: 11px;
+    color: #3a2a1a;
+  }
+  .footer-love span { color: var(--gold-dark); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero > * { animation: fadeUp 0.7s ease both; }
+  .hero-eyebrow  { animation-delay: 0.1s; }
+  .hero h1       { animation-delay: 0.2s; }
+  .hero-sub      { animation-delay: 0.35s; }
+  .hero-pills    { animation-delay: 0.45s; }
+  .hero .btn-primary { animation-delay: 0.55s; }
+  .hero-trust    { animation-delay: 0.65s; }
+
+  /* MOBILE */
+  @media (max-width: 540px) {
+    nav { padding: 12px 20px; }
+    .nav-logo { font-size: 16px; }
+    .nav-logo img { height: 24px; }
+    section { padding: 56px 20px; }
+    .hero { padding: 60px 20px 56px; }
+    .cta-section { padding: 64px 20px; }
+    footer { padding: 32px 20px 24px; }
+    .pkg-grid { grid-template-columns: 1fr; }
+    .metrics-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* FORM SUCCESS */
+  .form-success {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 28px;
+    background: rgba(201,169,110,0.1);
+    border: 0.5px solid rgba(201,169,110,0.3);
+    border-radius: 8px;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  .form-success p {
+    font-family: var(--serif);
+    font-size: 20px;
+    color: var(--gold-light);
+    font-style: italic;
+    text-align: center;
+    line-height: 1.5;
+  }
+  .form-success small {
+    font-size: 12px;
+    color: var(--stone-light);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">
+    <img src="./img/full-logo.png" alt="Standup Agency Logo">
+  </a>
+  <a href="#contatto" class="nav-cta">Prenota la call gratuita →</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-eyebrow">Video Organici per Saloni &amp; Centri Estetici</div>
+  <h1>
+    La tua agenda<br>
+    dovrebbe essere <em>piena.</em><br>
+    <strong>I tuoi Reels, no.</strong>
+  </h1>
+  <p class="hero-sub">
+    Creiamo video organici per Instagram, TikTok e YouTube Shorts che portano nuove clienti nel tuo salone — senza spendere un euro in pubblicità.
+  </p>
+  <div class="hero-pills">
+    <span class="pill">Nessun budget Ads</span>
+    <span class="pill">Video pronti in 7 giorni</span>
+    <span class="pill">Fatto tutto per te</span>
+  </div>
+  <a href="#contatto" class="btn-primary">Prenota la tua consulenza gratuita →</a>
+  <p class="hero-trust">Già scelto da molti saloni italiani · Nessun impegno</p>
+</section>
+
+<section class="pain-section">
+  <p class="section-label">Il problema</p>
+  <h2>Sei brava nel tuo lavoro.<br><em>Sui social, non ci riesci mai.</em></h2>
+  <p class="section-intro">Non è colpa tua. Gestire un salone e fare contenuti efficaci sono due lavori a tempo pieno. Ecco cosa ci raccontano le estetiste ogni giorno.</p>
+  <div class="pain-grid">
+    <div class="pain-card">
+      <div class="pain-icon">🕐</div>
+      <h3>Tempo</h3>
+      <p>"Non ho tempo di fare video. Stare dietro alle clienti già mi prende tutto."</p>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">📉</div>
+      <h3>Risultati</h3>
+      <p>"Post fatti da sola che non vede nessuno. Zero nuove clienti dai social."</p>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">😤</div>
+      <h3>Concorrenza</h3>
+      <p>"Il salone di fronte ha 10k follower. Io non so neanche da dove iniziare."</p>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">😩</div>
+      <h3>Stress</h3>
+      <p>"Ogni domenica sera a pensare a cosa postare. Non ne posso più."</p>
+    </div>
+  </div>
+</section>
+
+<section class="solution-section">
+  <p class="section-label">La soluzione</p>
+  <h2 style="color:#FAF6F0;">Ti pensiamo noi a portarti<br><em style="color:#C9A96E;">nuove clienti dai social.</em></h2>
+  <p class="section-intro">Creiamo per te video organici professionali ottimizzati per essere trovati dalle persone vicino al tuo salone — anche senza un centesimo di budget pubblicitario.</p>
+  <div class="benefit-list">
+    <div class="benefit-item">
+      <div class="benefit-num">01</div>
+      <div class="benefit-content">
+        <h3>Nuove clienti locali</h3>
+        <p>Video pensati per intercettare chi cerca un'estetista nella tua zona. Non follower random: persone vere, vicine a te, pronte a prenotare.</p>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-num">02</div>
+      <div class="benefit-content">
+        <h3>Autorevolezza immediata</h3>
+        <p>Mostriamo i tuoi trattamenti con una qualità che stupisce. Le nuove clienti si fidano di te prima ancora di chiamarti.</p>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-num">03</div>
+      <div class="benefit-content">
+        <h3>Zero pensieri per te</h3>
+        <p>Scriviamo, montiamo, ottimizziamo e pubblichiamo. Tu pensi alle clienti. Noi pensiamo ai contenuti.</p>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:40px; text-align:center;">
+    <a href="#contatto" class="btn-primary">Voglio risultati così — Chiamata gratuita →</a>
+  </div>
+</section>
+
+<section class="metrics-section">
+  <p class="section-label">I numeri che contano</p>
+  <h2>Le storie che <em>ispirano.</em></h2>
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-num"><span>+</span>540<span>%</span></div>
+      <div class="metric-label">visualizzazioni organiche<br>nel primo mese</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num">20<span>+</span></div>
+      <div class="metric-label">nuove clienti via social<br>in 30 giorni (media)</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num">7<span>gg</span></div>
+      <div class="metric-label">dal brief al primo<br>Reel pubblicato</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num">30<span>+</span></div>
+      <div class="metric-label">saloni italiani<br>già seguiti</div>
+    </div>
+  </div>
+  <div class="testimonials">
+    <div class="testi-card">
+      <p class="testi-text">Non credevo potesse funzionare così in fretta. Dopo il primo video ho avuto 3 nuove clienti che non conoscevo. Adesso le mie colleghe mi chiedono chi lo fa per me.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">SB</div>
+        <div>
+          <div class="testi-name">Sonia</div>
+          <div class="testi-place">Centro Estetico Sonia · Padenghe</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <p class="testi-text">Prima perdevo ore sui social senza capire cosa funzionasse. Ora ho video professionali che girano da soli e l'agenda di Maggio è già quasi piena.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">MA</div>
+        <div>
+          <div class="testi-name">Maria</div>
+          <div class="testi-place">Centro Estetico · Montichiari</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process-section">
+  <p class="section-label">Come funziona</p>
+  <h2>Tre passi.<br><em>Zero complicazioni.</em></h2>
+  <p class="section-intro">Dal primo contatto al primo video pubblicato, sai esattamente cosa succede e quando.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num-wrap">
+        <div class="step-num">1</div>
+        <div class="step-line"></div>
+      </div>
+      <div>
+        <div class="step-tag">Giorno 1</div>
+        <h3>Ci racconti il tuo salone</h3>
+        <p>Una chiamata di 20 minuti. Ti ascoltiamo: i tuoi trattamenti, il tuo stile, il tuo target ideale. Niente questionari infiniti. Subito al punto.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num-wrap">
+        <div class="step-num">2</div>
+        <div class="step-line"></div>
+      </div>
+      <div>
+        <div class="step-tag">Giorni 2–6</div>
+        <h3>Creiamo i tuoi video</h3>
+        <p>Scriviamo gli script, montiamo, ottimizziamo per l'algoritmo. Ti guidiamo noi nel girare il materiale — senza bisogno di attrezzatura professionale.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num-wrap">
+        <div class="step-num">3</div>
+        <div class="step-line"></div>
+      </div>
+      <div>
+        <div class="step-tag">Dal giorno 7</div>
+        <h3>Pubblichiamo e misuriamo</h3>
+        <p>I video escono nei giorni giusti, con gli hashtag giusti. Ogni mese ti mostriamo i risultati in chiaro: visualizzazioni, reach, nuove richieste.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <p class="section-label">Domande frequenti</p>
+  <h2>Hai dubbi?<br><em>Ci stavo pensando anch'io.</em></h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="faq-q-text">"Non ho tempo per girare video"</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        <p>Non devi. Ti diciamo esattamente cosa fare in 15 minuti con lo smartphone che hai già in tasca, oppure lo facciamo noi direttamente. Il tuo tempo è prezioso — per questo esistiamo.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="faq-q-text">"Ho già provato con i social e non è servito a niente"</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        <p>Probabilmente mancava la strategia. Un Reel bello non basta: serve l'angolo giusto, le parole giuste, l'ottimizzazione giusta per il tuo mercato locale. È esattamente quello che facciamo.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="faq-q-text">"Devo avere già tanti follower?"</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        <p>No. I video organici funzionano anche con 200 follower. L'algoritmo li distribuisce a chi non ti conosce ancora — è esattamente quello che vogliamo: nuove clienti, non like dalle solite amiche.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="faq-q-text">"E se non funziona per il mio salone?"</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        <p>La prima chiamata è gratuita e senza impegno. Prima di tutto valutiamo insieme se c'è potenziale per il tuo mercato. Se non vediamo margine, te lo diciamo chiaramente. Nessun contratto forzato.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">
+        <span class="faq-q-text">"Quanto tempo prima di vedere i primi risultati?"</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-a">
+        <p>Molte clienti vedono le prime interazioni già dal primo video. I risultati concreti in termini di prenotazioni si stabilizzano mediamente nel secondo mese. La costanza fa la differenza.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="contatto">
+  <div style="position:relative;z-index:1;">
+    <p class="section-label" style="color:var(--gold);">Inizia oggi</p>
+    <h2>La tua agenda piena<br><em style="color:var(--gold);">inizia da qui.</em></h2>
+    <p class="cta-sub">Prenota una chiamata gratuita di 20 minuti. Ti diciamo esattamente cosa possiamo fare per il tuo salone — senza impegno.</p>
+    <div class="cta-form" id="cta-form">
+      <input type="text" id="nome" placeholder="Il tuo nome" autocomplete="name">
+      <input type="tel" id="tel" placeholder="Il tuo numero WhatsApp" autocomplete="tel">
+      <button class="btn-submit" onclick="submitForm()">Prenota la chiamata gratuita →</button>
+    </div>
+    <div class="form-success" id="form-success">
+      <p>Perfetto! Ti contatto entro 24 ore.</p>
+      <small>Controlla anche WhatsApp — ti scrivo da lì.</small>
+    </div>
+    <p class="cta-trust">Nessuno spam. Nessun impegno. Solo risultati.</p>
+    <a href="https://wa.me/393279059643" class="whatsapp-link">Preferisci scrivere su WhatsApp? Scrivimi direttamente →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <a href="index.html" aria-label="Torna alla Home di Standup Agency">
+      <img src="./img/full-logo.png" alt="Logo Standup Agency - Video per Estetiste" class="footer-logo">
+    </a>
+    <div class="footer-links">
+      <a href="#">Chi siamo</a>
+      <a href="#">Portfolio</a>
+      <a href="#contatto">Contatti</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 Standup Agency · <a href="https://www.standupagency.it" aria-label="Visita il sito ufficiale Standup Agency" style="color: var(--gold-dark);">standupagency.it</a></p>
+    <p class="footer-love">Fatto con <span>♥</span> per le estetiste italiane</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q').addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  async function submitForm() {
+  const nome = document.getElementById('nome').value.trim();
+  const tel  = document.getElementById('tel').value.trim();
+  
+  // Controllo che i campi non siano vuoti
+  if (!nome || !tel) {
+    document.getElementById('nome').style.borderColor = nome ? '' : 'var(--gold)';
+    document.getElementById('tel').style.borderColor  = tel  ? '' : 'var(--gold)';
+    return;
+  }
+
+  // Cambia il testo del bottone per far capire che sta caricando
+  const btn = document.querySelector('.btn-submit');
+  const originalText = btn.innerHTML;
+  btn.innerHTML = "Invio in corso... ⏳";
+  btn.disabled = true;
+
+  const formspreeEndpoint = "https://formspree.io/f/xnjlzeon";
+
+  try {
+    const response = await fetch(formspreeEndpoint, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      // Questi sono i dati che ti arriveranno per email
+      body: JSON.stringify({ 
+        Nome: nome, 
+        WhatsApp: tel,
+        Sito: "Standup Agency" 
+      })
+    });
+
+    if (response.ok) {
+      // Se l'invio va a buon fine, mostriamo l'animazione di successo
+      document.getElementById('cta-form').style.display = 'none';
+      document.getElementById('form-success').style.display = 'flex';
+    } else {
+      // Se c'è un errore lato Formspree
+      alert("Ops, c'è stato un problema. Riprova o scrivimi su WhatsApp!");
+      btn.innerHTML = originalText;
+      btn.disabled = false;
+    }
+  } catch (error) {
+    // Se c'è un errore di connessione/internet
+    alert("Errore di rete. Controlla la connessione e riprova.");
+    btn.innerHTML = originalText;
+    btn.disabled = false;
+  }
+}
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.pain-card, .benefit-item, .metric-card, .testi-card, .step, .pkg-card, .faq-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
