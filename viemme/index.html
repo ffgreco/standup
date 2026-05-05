@@ -14,6 +14,7 @@
   <meta name="author" content="VIEMME STORE" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.viemme.store" />
+  <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
 
   <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
   <meta property="og:type" content="website" />
@@ -74,7 +75,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap"
     rel="stylesheet" />
 
   <!-- Google Analytics — caricato solo dopo consenso -->
@@ -94,7 +95,7 @@
       --lavender-light: #e0dcf0;
       --lavender-pale: #f4f2fa;
       --border: #e8e4f0;
-      --serif: 'Syne', sans-serif;
+      --serif: 'Cormorant Garamond', serif;
       --sans: 'DM Sans', sans-serif;
     }
 
@@ -368,6 +369,7 @@
       grid-template-columns: 1fr 1fr;
       align-items: flex-end;
       gap: 4rem;
+      margin-bottom: 2rem;
     }
 
 
@@ -635,14 +637,17 @@
       transition: width 0.5s ease;
     }
 
-    .servizio-item:hover::before {
-      width: 100%;
-    }
 
-    .servizio-item:hover {
+    /* Card dispari sempre "attivate" di default — effetto scacchiera */
+    .servizio-item:nth-child(odd) {
       background: var(--lavender-pale);
     }
 
+    .servizio-item:nth-child(odd)::before {
+      width: 100%;
+    }
+
+    
     .servizio-num {
       font-family: var(--serif);
       font-size: 0.75rem;
@@ -1301,8 +1306,8 @@
     }
 
     #ws-logo{
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 4%  0px;
     }
   </style>
 </head>
