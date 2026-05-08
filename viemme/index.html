@@ -5,59 +5,46 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO primario -->
   <title>VIEMME STORE — Personalizzazione Abbigliamento da Lavoro | Stampa e Ricamo</title>
   <meta name="description"
-    content="VIEMME STORE personalizza abbigliamento da lavoro con stampa digitale, ricamo e serigrafia. Divise professionali per ristoranti, hotel, negozi e aziende. Richiedi un preventivo." />
+    content="VIEMME STORE personalizza abbigliamento da lavoro con stampa digitale, ricamo e design. Divise professionali per ristoranti, hotel, negozi e aziende. Richiedi un preventivo." />
   <meta name="keywords"
-    content="abbigliamento da lavoro, personalizzazione divise, stampa maglie, ricamo logo, serigrafia, divise ristorante, divise aziendali, abbigliamento professionale, stampa digitale tessuto" />
+    content="abbigliamento da lavoro, personalizzazione divise, stampa maglie, ricamo logo, design, divise ristorante, divise aziendali, abbigliamento professionale, stampa digitale tessuto" />
   <meta name="author" content="VIEMME STORE" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.viemme.store" />
   <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
 
-  <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="VIEMME STORE" />
   <meta property="og:title" content="VIEMME STORE — Personalizzazione Abbigliamento da Lavoro" />
   <meta property="og:description"
-    content="Stampa digitale, ricamo e serigrafia su abbigliamento da lavoro. Divise personalizzate per aziende, ristoranti, hotel e negozi. Preventivo gratuito." />
+    content="Stampa digitale, ricamo e design su abbigliamento da lavoro. Divise personalizzate per aziende, ristoranti, hotel e negozi. Preventivo gratuito." />
   <meta property="og:url" content="https://www.viemme.store" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="it_IT" />
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="VIEMME STORE — Personalizzazione Abbigliamento da Lavoro" />
   <meta name="twitter:description"
-    content="Stampa digitale, ricamo e serigrafia su abbigliamento da lavoro. Preventivo gratuito." />
+    content="Stampa digitale, ricamo e design su abbigliamento da lavoro. Preventivo gratuito." />
   <meta name="twitter:image" content="https://www.viemme.store" />
 
-  <!-- Geo (utile per SEO locale) -->
   <meta name="geo.region" content="IT" />
   <meta name="geo.placename" content="Italia" />
 
-  <!-- Schema.org JSON-LD — LocalBusiness -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "VIEMME STORE",
-    "description": "Personalizzazione di abbigliamento da lavoro con stampa digitale, ricamo e serigrafia.",
+    "description": "Personalizzazione di abbigliamento da lavoro con stampa digitale, ricamo e design.",
     "url": "https://www.viemme.store",
     "logo": "https://www.viemme.store/img/logo.png",
     "image": "https://www.viemmestore.it/img/og-image.jpg",
     "email": "info@viemme.store",
     "telephone": "+39-000-000-0000",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Via Esempio 1",
-      "addressLocality": "Milano",
-      "addressRegion": "MI",
-      "postalCode": "20100",
-      "addressCountry": "IT"
-    },
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
@@ -71,14 +58,12 @@
   }
   </script>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap"
     rel="stylesheet" />
 
-  <!-- Google Analytics — caricato solo dopo consenso -->
   <script>
     window.GA_ID = 'G-XXXXXXXXXX'; // ← sostituisci con il tuo GA4 ID
   </script>
@@ -701,7 +686,7 @@
 
     .categorie-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
       margin-top: 5rem;
     }
@@ -759,7 +744,7 @@
        SEZIONE: COME FUNZIONA
     ============================================================ */
     #come-funziona {
-      padding: 10rem 5rem 10rem 6rem;
+      padding: 5rem 5rem 10rem 6rem;
       background: var(--lavender-pale);
     }
 
@@ -1081,8 +1066,279 @@
       color: var(--lavender);
     }
 
+    .categoria-card--featured img {
+      filter: grayscale(30%) brightness(0.75);
+    }
+
+    .categoria-card--featured::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      border: 2px solid var(--lavender);
+      pointer-events: none;
+    }
+
+    .categoria-featured-badge {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      z-index: 3;
+      background: var(--lavender);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 0.52rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.8rem;
+    }
+
     /* ============================================================
-       SCROLL REVEAL
+       SEZIONE: BRAND SLIDER
+    ============================================================ */
+    #brand-slider {
+      background: var(--white);
+      padding: 4rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .brand-slider-label {
+      text-align: center;
+      font-family: var(--sans);
+      font-size: 0.58rem;
+      font-weight: 400;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--lavender);
+      margin-bottom: 2.5rem;
+    }
+
+    .brand-track-wrapper {
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+    }
+
+    .brand-track {
+      display: flex;
+      align-items: center;
+      gap: 5rem;
+      width: max-content;
+      animation: brandScroll 28s linear infinite;
+      margin-top: 0.5rem;
+    }
+
+    .brand-track:hover {
+      animation-play-state: paused;
+    }
+
+    .brand-logo-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .brand-logo-item img {
+      width: 130px;
+      height: 55px;
+      object-fit: contain;
+      filter: grayscale(100%) opacity(0.4);
+      transition: filter 0.4s ease, transform 0.4s ease;
+    }
+
+    .brand-logo-item:hover img {
+      filter: grayscale(0%) opacity(1);
+    }
+
+    .brand-logo-icon {
+      width: 28px;
+      height: 28px;
+      fill: var(--ink);
+    }
+
+    .brand-logo-name {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--ink);
+      text-transform: uppercase;
+    }
+
+    @keyframes brandScroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ============================================================
+       SEZIONE: I NOSTRI LAVORI (PORTFOLIO)
+    ============================================================ */
+    #portfolio {
+      padding: 10rem 0 3rem;
+      background: var(--lavender-pale);
+      overflow: hidden;
+    }
+
+    .portfolio-header {
+      padding: 0 5rem 0 6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 5rem;
+    }
+
+    .portfolio-intro {
+      max-width: 300px;
+      font-size: 0.88rem;
+      line-height: 1.8;
+      color: var(--ink-light);
+    }
+
+    .portfolio-carousel-wrapper {
+      position: relative;
+    }
+
+    .portfolio-carousel {
+      display: flex;
+      gap: 1.5rem;
+      padding: 0 6rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      cursor: grab;
+    }
+
+    .portfolio-carousel::-webkit-scrollbar {
+      display: none;
+    }
+
+    .portfolio-carousel.dragging {
+      cursor: grabbing;
+      scroll-snap-type: none;
+    }
+
+    .portfolio-item {
+      flex: 0 0 340px;
+      scroll-snap-align: start;
+      position: relative;
+      background: var(--white);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .portfolio-item-img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+      filter: grayscale(20%);
+    }
+
+    .portfolio-item:hover .portfolio-item-img {
+      transform: scale(1.04);
+      filter: grayscale(0%);
+    }
+
+    .portfolio-item-info {
+      padding: 1.4rem 1.6rem;
+    }
+
+    .portfolio-item-tag {
+      font-family: var(--sans);
+      font-size: 0.55rem;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--lavender);
+      margin-bottom: 0.5rem;
+    }
+
+    .portfolio-item-name {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .portfolio-nav {
+      display: flex;
+      gap: 1rem;
+      padding: 0 6rem;
+      margin-top: 3rem;
+      align-items: center;
+    }
+
+    .portfolio-nav-btn {
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.3s, border-color 0.3s;
+      font-size: 1rem;
+      color: var(--ink);
+    }
+
+    .portfolio-nav-btn:hover {
+      background: var(--lavender);
+      border-color: var(--lavender);
+      color: var(--white);
+    }
+
+    .portfolio-drag-hint {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--lavender);
+      margin-left: auto;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 1024px) {
+      #portfolio {
+        padding: 6rem 0 2rem;
+      }
+      .portfolio-header {
+        padding: 0 3rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+      }
+      .portfolio-carousel {
+        padding: 0 3rem;
+      }
+      .portfolio-nav {
+        padding: 0 3rem;
+      }
+      .portfolio-item {
+        flex: 0 0 280px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .portfolio-carousel {
+        padding: 0 1.5rem;
+      }
+      .portfolio-nav {
+        padding: 0 1.5rem;
+      }
+      .portfolio-item {
+        flex: 0 0 240px;
+      }
+    }
+
+    /* ============================================================
     ============================================================ */
     .reveal {
       opacity: 0;
@@ -1224,7 +1480,7 @@
       }
 
       .categorie-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
       }
 
       #come-funziona {
@@ -1309,15 +1565,16 @@
       width: 40px;
       height: 4%  0px;
     }
+
+    .image-slider{
+        width: 100px;
+    }
   </style>
 </head>
 
 <body>
 
-    <!-- ============================================================
-       WHATSAPP LOGO
-  ============================================================ -->
-  <div class="whatsapp-container">
+    <div class="whatsapp-container">
     <div>
       <a href="">
         <img src="./img/whatsapp_logo.png" alt="whatsapp_logo" id="ws-logo">
@@ -1325,31 +1582,21 @@
     </div>
   </div>
 
-  <!-- ============================================================
-       CUSTOM CURSOR
-  ============================================================ -->
   <div id="cursor">
     <svg class="dragonfly-svg" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Ali superiori -->
       <ellipse cx="22" cy="18" rx="18" ry="7" fill="#b0aad0" fill-opacity="0.6" transform="rotate(-20 22 18)"
         style="animation: wingFlap 0.4s ease-in-out infinite;" />
       <ellipse cx="38" cy="18" rx="18" ry="7" fill="#b0aad0" fill-opacity="0.6" transform="rotate(20 38 18)"
         style="animation: wingFlap 0.4s ease-in-out infinite;" />
-      <!-- Ali inferiori -->
       <ellipse cx="20" cy="26" rx="13" ry="5" fill="#b0aad0" fill-opacity="0.4" transform="rotate(-15 20 26)" />
       <ellipse cx="40" cy="26" rx="13" ry="5" fill="#b0aad0" fill-opacity="0.4" transform="rotate(15 40 26)" />
-      <!-- Corpo -->
       <ellipse cx="30" cy="20" rx="3" ry="5" fill="#7a72a8" />
       <rect x="28.5" y="24" width="3" height="22" rx="1.5" fill="#7a72a8" />
-      <!-- Testa -->
       <circle cx="30" cy="14" r="4" fill="#7a72a8" />
     </svg>
   </div>
   <div id="cursor-dot"></div>
 
-  <!-- ============================================================
-       TOP NAV
-  ============================================================ -->
   <nav id="topnav" aria-label="Navigazione principale">
     <a href="#hero" class="nav-logo">
       <img src="./img/logo.png" alt="VIEMME STORE" />
@@ -1367,7 +1614,6 @@
     </button>
   </nav>
 
-  <!-- Mobile menu -->
   <div class="nav-mobile-menu" id="mobileMenu">
     <a href="#chi-siamo" onclick="closeMobileMenu()">Chi siamo</a>
     <a href="#servizi" onclick="closeMobileMenu()">Servizi</a>
@@ -1377,24 +1623,18 @@
     <a href="#contatti" class="nav-mobile-cta" onclick="closeMobileMenu()">Richiedi preventivo</a>
   </div>
 
-  <!-- ============================================================
-       MAIN
-  ============================================================ -->
   <main>
 
-    <!-- HERO -->
     <section id="hero">
 
-      <!-- Sfondo -->
       <div class="hero-bg">
         <img src="./img/herosection.png" alt="Personalizzazione abbigliamento da lavoro" />
       </div>
       <div class="hero-overlay"></div>
 
-      <!-- Testo -->
       <div class="hero-text">
         <div class="hero-text-left">
-          <p class="hero-eyebrow">Abbigliamento da Lavoro · Personalizzazione</p>
+          <p class="hero-eyebrow"><strong>Abbigliamento da Lavoro · Personalizzazione</strong></p>
           <h1 class="hero-title">
             Il tuo logo.<br />
             In Ogni <em>capo.</em><br />
@@ -1402,7 +1642,7 @@
         </div>
         <div class="hero-text-right">
           <p class="hero-desc">
-            Stampa digitale, ricamo e serigrafia su abbigliamento professionale.
+            Stampa digitale, ricamo e design su abbigliamento professionale.
             Divise personalizzate per aziende, ristoranti, hotel e negozi.
             Consegna rapida, qualità garantita.
           </p>
@@ -1413,7 +1653,6 @@
         </div>
       </div>
 
-      <!-- Scroll indicator -->
       <div class="hero-scroll">
         <span>Scroll</span>
         <div class="hero-scroll-line"></div>
@@ -1421,7 +1660,6 @@
 
     </section>
 
-    <!-- CHI SIAMO -->
     <section id="chi-siamo">
       <div>
         <p class="section-label reveal">--------------</p>
@@ -1438,7 +1676,7 @@
           </p>
           <p>
             Ogni capo viene pensato, <strong>selezionato</strong> e <strong>personalizzato</strong> con cura.
-            Ricamo a macchina, stampa digitale, serigrafia e transfer:
+            Ricamo a macchina, stampa digitale, design e transfer:
             scegliamo la tecnica più adatta al tuo <strong>brand</strong> e al tuo budget,
             garantendo risultati duraturi e di <strong>alta qualità</strong>.
           </p>
@@ -1457,7 +1695,56 @@
       </div>
     </section>
 
-    <!-- SERVIZI -->
+    <section id="brand-slider" aria-label="Brand partner">
+      <p class="brand-slider-label">I brand che vestiamo</p>
+      <div class="brand-track-wrapper">
+        <div class="brand-track" id="brandTrack">
+          <div class="brand-logo-item">
+            <img src="./img/loghi/logo-jrc-black.svg" alt="jrc">
+          </div>
+          <div class="brand-logo-item">
+            <img src="./img/loghi/payper.png" alt="payper" >
+          </div>
+          <div class="brand-logo-item">
+            <img src="./img/loghi/bc.png" alt="bc" >
+          </div>
+          <div class="brand-logo-item">
+            <img src="./img/loghi/upower.png" alt="upower" >
+          </div>
+          <div class="brand-logo-item">
+            <img src="./img/loghi/logo_rossini.png" alt="rossini" >
+          </div>
+          <div class="brand-logo-item">
+            <img src="./img/loghi/bs.png" alt="bs" >
+          </div>
+          <div class="brand-logo-item">
+            <img src="./img/loghi/isacco.png" alt="isacco" >
+          </div>
+          <div class="brand-logo-item">
+            <img src="./img/loghi/logo-jrc-black.svg" alt="jrc">
+          </div>
+          <div class="brand-logo-item">
+            <img src="./img/loghi/payper.png" alt="payper" >
+          </div>
+          <div class="brand-logo-item">
+            <img src="./img/loghi/bc.png" alt="bc" >
+          </div>
+          <div class="brand-logo-item">
+            <img src="./img/loghi/upower.png" alt="upower" >
+          </div>
+          <div class="brand-logo-item">
+            <img src="./img/loghi/logo_rossini.png" alt="rossini" >
+          </div>
+          <div class="brand-logo-item">
+            <img src="./img/loghi/bs.png" alt="bs" >
+          </div>
+          <div class="brand-logo-item">
+            <img src="./img/loghi/isacco.png" alt="isacco" >
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="servizi">
       <div class="servizi-header">
         <div>
@@ -1486,9 +1773,11 @@
         </div>
         <div class="servizio-item reveal reveal-delay-2">
           <p class="servizio-num">03.</p>
-          <h3 class="servizio-name">Serigrafia</h3>
-          <p class="servizio-desc">La tecnica classica per grandi quantità. Colori vivaci e nitidi su t-shirt, felpe e
-            capi sportivi. Economica e di grande impatto visivo.</p>
+          <h3 class="servizio-name">Design e <br>Grafica</h3>
+          <p class="servizio-desc">
+            Ci prendiamo cura della parte di design e di grafica così da poter ottenere il risultato desiderato. Ogni capo
+            è studiato a se così da essere unico
+          </p>
         </div>
         <div class="servizio-item reveal reveal-delay-1">
           <p class="servizio-num">04.</p>
@@ -1511,37 +1800,106 @@
       </div>
     </section>
 
-    <!-- CATEGORIE -->
     <section id="categorie">
       <p class="section-label reveal">--------------</p>      
       <h2 class="section-title reveal reveal-delay-1">
         Per ogni<br /><em>settore</em><br />la divisa giusta.
       </h2>
       <div class="categorie-grid">
-        <div class="categoria-card reveal">
+        <div class="categoria-card categoria-card--featured reveal">
+          <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=900&auto=format&fit=crop&q=60" alt="Industriale" />
+          <div class="categoria-label"><small>Settore principale</small>Industriale</div>
+          <div class="categoria-featured-badge">★ Core</div>
+        </div>
+        <div class="categoria-card reveal reveal-delay-1">
           <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ristorazione" />
           <div class="categoria-label"><small>Settore</small>Ristorazione</div>
         </div>
-        <div class="categoria-card reveal reveal-delay-1">
+        <div class="categoria-card reveal reveal-delay-2">
           <img src="https://plus.unsplash.com/premium_photo-1673953510197-0950d951c6d9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fG9zcGVkYWxlfGVufDB8fDB8fHww" alt="Sanitario" />
           <div class="categoria-label"><small>Settore</small>Sanitario</div>
         </div>
-        <div class="categoria-card reveal reveal-delay-2">
+        <div class="categoria-card reveal reveal-delay-1">
           <img src="https://plus.unsplash.com/premium_photo-1670002278045-51f2c6c4ef01?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGNlbnRybyUyMGVzdGV0aWNvfGVufDB8fDB8fHww" alt="Estetica & Beauty" />
           <div class="categoria-label"><small>Settore</small>Estetica</div>
         </div>
-        <div class="categoria-card reveal reveal-delay-3">
+        <div class="categoria-card reveal reveal-delay-2">
           <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bmVnb3ppbyUyMHJldGFpbHxlbnwwfHwwfHx8MA%3D%3D" alt="Retail & Negozi" />
           <div class="categoria-label"><small>Settore</small>Retail</div>
         </div>
-        <div class="categoria-card reveal reveal-delay-4">
+        <div class="categoria-card reveal reveal-delay-3">
           <img src="https://plus.unsplash.com/premium_photo-1683120730432-b5ea74bd9047?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dWZmaWNpb3xlbnwwfHwwfHx8MA%3D%3D" alt="Ufficio & Professionale" />
           <div class="categoria-label"><small>Settore</small>Ufficio</div>
         </div>
       </div>
     </section>
 
-    <!-- COME FUNZIONA -->
+    <section id="portfolio">
+      <div class="portfolio-header reveal">
+        <div>
+          <p class="section-label">--------------</p>
+          <h2 class="section-title" style="color: var(--ink);">
+            I nostri<br /><em>lavori.</em>
+          </h2>
+        </div>
+        <p class="portfolio-intro">
+          Ogni capo è un progetto su misura. Qui trovi una selezione dei nostri lavori:
+          dalla tuta industriale alla polo aziendale, dal giubbotto tecnico alla scarpa da lavoro personalizzata.
+        </p>
+      </div>
+      <div class="portfolio-carousel-wrapper">
+        <div class="portfolio-carousel" id="portfolioCarousel">
+          <div class="portfolio-item">
+            <img class="portfolio-item-img" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&auto=format&fit=crop&q=70" alt="Scarpe da lavoro personalizzate" />
+            <div class="portfolio-item-info">
+              <p class="portfolio-item-tag">Calzature · Industriale</p>
+              <h3 class="portfolio-item-name">Scarpe da lavoro S3</h3>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <img class="portfolio-item-img" src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&auto=format&fit=crop&q=70" alt="T-shirt personalizzata" />
+            <div class="portfolio-item-info">
+              <p class="portfolio-item-tag">Abbigliamento · Stampa DTG</p>
+              <h3 class="portfolio-item-name">T-shirt aziendale</h3>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <img class="portfolio-item-img" src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&auto=format&fit=crop&q=70" alt="Giubbotto tecnico personalizzato" />
+            <div class="portfolio-item-info">
+              <p class="portfolio-item-tag">Outerwear · Ricamo</p>
+              <h3 class="portfolio-item-name">Giubbotto softshell</h3>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <img class="portfolio-item-img" src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=600&auto=format&fit=crop&q=70" alt="Felpa con cappuccio personalizzata" />
+            <div class="portfolio-item-info">
+              <p class="portfolio-item-tag">Abbigliamento · Transfer</p>
+              <h3 class="portfolio-item-name">Hoodie da lavoro</h3>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <img class="portfolio-item-img" src="https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?w=600&auto=format&fit=crop&q=70" alt="Polo aziendale con ricamo" />
+            <div class="portfolio-item-info">
+              <p class="portfolio-item-tag">Abbigliamento · Ricamo</p>
+              <h3 class="portfolio-item-name">Polo professionale</h3>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <img class="portfolio-item-img" src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&auto=format&fit=crop&q=70" alt="Borsa aziendale personalizzata" />
+            <div class="portfolio-item-info">
+              <p class="portfolio-item-tag">Accessori · Stampa</p>
+              <h3 class="portfolio-item-name">Zaino tecnico</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-nav">
+        <button class="portfolio-nav-btn" id="portfolioPrev" aria-label="Precedente">←</button>
+        <button class="portfolio-nav-btn" id="portfolioNext" aria-label="Successivo">→</button>
+        <span class="portfolio-drag-hint">Trascina per scorrere</span>
+      </div>
+    </section>
+
     <section id="come-funziona">
       <p class="section-label reveal">--------------</p>     
             <h2 class="section-title reveal reveal-delay-1">
@@ -1578,7 +1936,6 @@
       </div>
     </section>
 
-    <!-- CONTATTI -->
     <section id="contatti">
       <div class="contatti-info">
         <p class="section-label reveal">Contattaci</p>
@@ -1597,14 +1954,6 @@
           <span>
             <span class="detail-label">WhatsApp</span>
             <a href="https://wa.me/390000000000" target="_blank">Scrivici su WhatsApp</a>
-          </span>
-          <span>
-            <span class="detail-label">Indirizzo</span>
-            <span>Via Esempio 1, 20100 Milano (MI)</span>
-          </span>
-          <span>
-            <span class="detail-label">Orari</span>
-            <span>Lun–Ven: 9:00–18:00</span>
           </span>
         </div>
       </div>
@@ -1626,6 +1975,7 @@
             <label for="settore">Settore</label>
             <select id="settore" name="settore">
               <option value="">Seleziona un settore...</option>
+              <option>Industriale</option>
               <option>Ristorazione</option>
               <option>Sanitario</option>
               <option>Estetica & Beauty</option>
@@ -1644,7 +1994,6 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
       <a href="#hero" class="nav-logo">
         <img src="./img/logo.png" alt="VIEMME STORE" />
@@ -1655,17 +2004,15 @@
         </a>
       </p>
       <div class="footer-social">
-        <a href="#" target="_blank">Instagram</a>
+        <a href="https://www.instagram.com/viemme_store/" target="_blank">Instagram</a>
         <a href="#" target="_blank">Facebook</a>
-        <a href="#" target="_blank">LinkedIn</a>
+      </div>
+      <div class="footer-copy">
+        Made with ❤️ by <a href="https://www.standupagency.it" target="_blank" style="color:var(--lavender)">StandUp Agency</a>
       </div>
     </footer>
-
   </main>
 
-  <!-- ============================================================
-       COOKIE BANNER
-  ============================================================ -->
   <div id="cookie-banner" role="dialog" aria-label="Preferenze cookie">
     <div class="cookie-top">
       <svg class="cookie-dragonfly" viewBox="0 0 60 60" fill="none">
@@ -1689,9 +2036,6 @@
     </div>
   </div>
 
-  <!-- ============================================================
-       JAVASCRIPT
-  ============================================================ -->
   <script>
     // ============================================================
     // CUSTOM CURSOR
@@ -1824,6 +2168,49 @@
       btn.disabled = true;
       // Qui puoi collegare il tuo backend o servizio email (es. Formspree, EmailJS)
     }
+    // ============================================================
+    // PORTFOLIO CAROUSEL — drag to scroll + nav buttons
+    // ============================================================
+    (function () {
+      const carousel = document.getElementById('portfolioCarousel');
+      if (!carousel) return;
+
+      let isDown = false, startX, scrollLeft;
+
+      carousel.addEventListener('mousedown', e => {
+        isDown = true;
+        carousel.classList.add('dragging');
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+      });
+      carousel.addEventListener('mouseleave', () => { isDown = false; carousel.classList.remove('dragging'); });
+      carousel.addEventListener('mouseup', () => { isDown = false; carousel.classList.remove('dragging'); });
+      carousel.addEventListener('mousemove', e => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 1.4;
+        carousel.scrollLeft = scrollLeft - walk;
+      });
+
+      let touchStartX = 0, touchScrollLeft = 0;
+      carousel.addEventListener('touchstart', e => {
+        touchStartX = e.touches[0].pageX;
+        touchScrollLeft = carousel.scrollLeft;
+      }, { passive: true });
+      carousel.addEventListener('touchmove', e => {
+        const dx = touchStartX - e.touches[0].pageX;
+        carousel.scrollLeft = touchScrollLeft + dx;
+      }, { passive: true });
+
+      const STEP = 360;
+      document.getElementById('portfolioNext').addEventListener('click', () => {
+        carousel.scrollBy({ left: STEP, behavior: 'smooth' });
+      });
+      document.getElementById('portfolioPrev').addEventListener('click', () => {
+        carousel.scrollBy({ left: -STEP, behavior: 'smooth' });
+      });
+    })();
   </script>
 
 </body>
